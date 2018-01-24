@@ -44,5 +44,5 @@ let s:p.normal.error =    [ [ s:red,      s:brightblack ] ]
 let s:p.normal.warning =  [ [ s:yellow,   s:brightblack ] ]
 let s:p.normal.special =  [ [ s:cyan,     s:brightblack ] ]
 
-let g:lightline#colorscheme#DarkPlus#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#dark_plus#palette = lightline#colorscheme#flatten(s:p)
 

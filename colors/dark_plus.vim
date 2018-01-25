@@ -47,19 +47,16 @@ function! s:h(group, style)
         \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 " }}}
-
-
 " ==============================================================================
 " Colors: {{{
 " ==============================================================================
 let s:nop =          { 'gui': 'NONE',    'cterm16':'NONE','cterm': 'NONE'}
 
 let s:White =        { 'gui': '#d4d4d4', 'cterm16': '07', 'cterm': '188' }
-let s:Black =        { 'gui': '#1e1e1e', 'cterm16': '07', 'cterm': '234' }
-let s:LightGray =    { 'gui': '#5a5a5a', 'cterm16': '07', 'cterm': '240' }
-let s:Gray =         { 'gui': '#808080', 'cterm16': '07', 'cterm': '08'  }
-let s:DarkGray =     { 'gui': '#505050', 'cterm16': '07', 'cterm': '08'  }
-let s:VeryDarkGray = { 'gui': '#303030', 'cterm16': '07', 'cterm': '234' }
+let s:LightGray =    { 'gui': '#808080', 'cterm16': '07', 'cterm': '244' }
+let s:Gray =         { 'gui': '#505050', 'cterm16': '00', 'cterm': '08'  }
+let s:DarkGray =     { 'gui': '#303030', 'cterm16': '00', 'cterm': '234' }
+let s:Black =        { 'gui': '#1e1e1e', 'cterm16': '00', 'cterm': '234' }
 
 let s:Red =          { 'gui': '#f44747', 'cterm16': '01', 'cterm': '203' }
 let s:LightRed =     { 'gui': '#d16969', 'cterm16': '01', 'cterm': '167' }
@@ -75,36 +72,12 @@ let s:BrightBlue =   { 'gui': '#007acc', 'cterm16': '04', 'cterm': '33'  }
 let s:Cyan =         { 'gui': '#4ec9b0', 'cterm16': '06', 'cterm': '43'  }
 let s:Magenta =      { 'gui': '#c586c0', 'cterm16': '13', 'cterm': '176' }
 let s:Violet =       { 'gui': '#646695', 'cterm16': '07', 'cterm': '60'  }
-
 " #3b629d
 " let s:cdSearch =        { 'gui': '#4c4e50', 'cterm16': '03', 'cterm': '239' }
 " let s:cdSearchCurrent = { 'gui': '#49545f', 'cterm16': '09', 'cterm': '239' }
-
-call s:h('DarkGray',     {'fg': s:DarkGray})
-call s:h('VeryDarkGray', {'fg': s:VeryDarkGray})
-call s:h('BrightBlue',   {'fg': s:BrightBlue})
-call s:h('Gray',         {'fg': s:Gray})
-call s:h('Violet',       {'fg': s:Violet})
-call s:h('Blue',         {'fg': s:Blue})
-call s:h('DarkBlue',     {'fg': s:DarkBlue})
-call s:h('LightBlue',    {'fg': s:LightBlue})
-call s:h('Green',        {'fg': s:Green})
-call s:h('Cyan',         {'fg': s:Cyan})
-call s:h('LightGreen',   {'fg': s:LightGreen})
-call s:h('Red',          {'fg': s:Red})
-call s:h('Orange',       {'fg': s:Orange})
-call s:h('LightRed',     {'fg': s:LightRed})
-call s:h('YellowOrange', {'fg': s:YellowOrange,})
-call s:h('Yellow',       {'fg': s:Yellow})
-call s:h('Pink',         {'fg': s:Magenta})
-
-call s:h('nop',          {'fg': s:nop,'bg': s:nop})
-call s:h('DarkBlue',     {'fg': s:DarkBlue})
-call s:h('Escape',       {'fg': s:YellowOrange})
-" }}}
-
+"
 " ===============================================================================
-" === Terminal Colors === {{{
+" Terminal Colors:  {{{
 " ==============================================================================
 let g:terminal_color_0 =  s:Black.gui        " black
 let g:terminal_color_1 =  s:Red.gui          " red
@@ -128,107 +101,157 @@ if &background ==? 'light'
     let g:terminal_color_background = g:terminal_color_7
     let g:terminal_color_foreground = g:terminal_color_2
 endif
-
 " }}}
 
+call s:h('DarkGray',     {'fg': s:Gray})
+call s:h('DarkGray',     {'fg': s:DarkGray})
+call s:h('Gray',         {'fg': s:LightGray})
+call s:h('Red',          {'fg': s:Red})
+call s:h('LightRed',     {'fg': s:LightRed})
+call s:h('Orange',       {'fg': s:Orange})
+call s:h('YellowOrange', {'fg': s:YellowOrange,})
+call s:h('Yellow',       {'fg': s:Yellow})
+call s:h('Green',        {'fg': s:Green})
+call s:h('Blue',         {'fg': s:Blue})
+call s:h('LightGreen',   {'fg': s:LightGreen})
+call s:h('Cyan',         {'fg': s:Cyan})
+call s:h('DarkBlue',     {'fg': s:DarkBlue})
+call s:h('LightBlue',    {'fg': s:LightBlue})
+call s:h('BrightBlue',   {'fg': s:BrightBlue})
+call s:h('Magenta',      {'fg': s:Magenta})
+call s:h('Violet',       {'fg': s:Violet})
+
+call s:h('nop',          {'fg':  s:nop,       'bg':    s:nop})
+call s:h('Bold',         {'gui': 'bold',      'cterm': 'bold'})
+call s:h('Italic',       {'gui': 'italic',    'cterm': 'italic'})
+call s:h('Underlined',   {'gui': 'underline', 'cterm': 'underline'})
+" }}}
+" ==============================================================================
+" Scopes: {{{
+" Mainly related to flow control like `continue`, `while`, `return`, etc.
+call s:h('Control',      {'fg': s:Magenta})
+" escape sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
+call s:h('Escape',       {'fg': s:YellowOrange})
+" The Name of a function or method.
+call s:h('Function',     {'fg': s:Yellow})
+" Any numeric value.
+call s:h('Number',       {'fg': s:LightGreen})
+" Operators can either be textual (e.g. `or`) or be characters (e.g. `||`).
+call s:h('Operator',     {'fg': s:Violet})
+" Regular Expressions.
+call s:h('RegEx',        {'fg': s:LightRed})
+" Strings.
+call s:h('String',       {'fg': s:Orange})
+" Assignment keywords like `let`, `var`, `new`, etc.
+call s:h('Storage',      {'fg': s:Blue})
+" Reserved language variables like `this`, `super`, `self`, etc.
+call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'})
+" Type or Class names.
+call s:h('Type',         {'fg': s:Cyan})
+" Variables. Not all languages allow easy identification (and thus markup) of these.
+call s:h('Var',          {'fg': s:LightBlue})
+" }}}
 " ==============================================================================
 " Vim Default Colors: {{{
 " ==============================================================================
-call s:h('Normal',         {'fg': s:White,           'bg': s:Black})
-call s:h('NormalNC',       {'bg': s:VeryDarkGray})
-call s:h('ColorColumn',    {'bg': s:VeryDarkGray})
-call s:h('iCursor',        {'bg': s:Blue})
-call s:h('vCursor',        {'bg': s:Magenta})
-call s:h('rCursor',        {'bg': s:LightRed})
-call s:h('Cursor',         {'bg': s:Green})
-call s:h('TermCursor',     {'bg': s:Green})
-call s:h('CursorLine',     {'bg': s:VeryDarkGray,})
-call s:h('Directory',      {'fg': s:Blue})
-call s:h('DiffAdd',                                   {'bg': s:Green })
+call s:h('Normal',          {'fg': s:White,     'bg': s:Black})
+call s:h('NormalNC',        {                   'bg': s:DarkGray})
+call s:h('ColorColumn',     {                   'bg': s:DarkGray})
+call s:h('iCursor',         {                   'bg': s:Blue})
+call s:h('vCursor',         {                   'bg': s:Magenta})
+call s:h('rCursor',         {                   'bg': s:LightRed})
+call s:h('Cursor',          {                   'bg': s:Green})
+call s:h('TermCursor',      {                   'bg': s:Green})
+call s:h('CursorLine',      {                   'bg': s:DarkGray})
+call s:h('Directory',       {'fg': s:Blue})
+call s:h('DiffAdd',         {                   'bg': s:Green})
 hi link diffAdded DiffAdd
-call s:h('DiffChange',      {'bg': s:Yellow  })
-call s:h('DiffDelete',      {'bg': s:LightRed })
-call s:h('DiffText',        {'bg': s:White })
-call s:h('EndOfBuffer',     {'fg': s:Black,            'bg': s:VeryDarkGray })
-call s:h('ErrorMsg',        {'fg': s:LightRed,         'bg': s:nop })
-call s:h('VertSplit',       {'fg': s:Black,            'bg': s:VeryDarkGray })
-call s:h('Folded',          {'fg': s:DarkGray,         'bg': s:nop })
-call s:h('FoldColumn',      {'fg': s:Black,            'bg': s:VeryDarkGray })
-call s:h('SignColumn',      {'bg': s:VeryDarkGray })
-call s:h('IncSearch',       {'fg': s:nop,              'bg': s:DarkBlue })
-call s:h('LineNr',          {'fg': s:LightGray,     'bg': s:VeryDarkGray })
-call s:h('CursorLineNr',    {'fg': s:Green,            'bg': s:VeryDarkGray })
-call s:h('MatchParen',      {'bg': s:DarkBlue})
+call s:h('DiffChange',      {                   'bg': s:Yellow})
+call s:h('DiffDelete',      {                   'bg': s:LightRed})
+call s:h('DiffText',        {                   'bg': s:White})
+call s:h('EndOfBuffer',     {'fg': s:Black,     'bg': s:DarkGray})
+call s:h('ErrorMsg',        {'fg': s:LightRed,  'bg': s:nop})
+call s:h('VertSplit',       {'fg': s:Black,     'bg': s:DarkGray})
+call s:h('Folded',          {'fg': s:Gray,      'bg': s:nop})
+call s:h('FoldColumn',      {'fg': s:Black,     'bg': s:DarkGray})
+call s:h('SignColumn',      {                   'bg': s:DarkGray})
+call s:h('IncSearch',       {'fg': s:nop,       'bg': s:DarkBlue})
+call s:h('LineNr',          {'fg': s:Gray,      'bg': s:DarkGray})
+call s:h('CursorLineNr',    {'fg': s:Green,     'bg': s:DarkGray})
+call s:h('MatchParen',      {                   'bg': s:DarkBlue})
 " (valloric/matchtagalways)
 hi link matchTag MatchParen
-call s:h('ModeMsg',        {'fg': s:Gray,})
+call s:h('ModeMsg',        {'fg': s:LightGray,})
 call s:h('MoreMsg',        {'fg': s:White,})
-call s:h('NonText',        {'fg': s:LightGray, 'bg': s:nop})
-call s:h('Pmenu',          {'fg': s:White,        'bg': s:VeryDarkGray})
-call s:h('PmenuSel',       {'fg': s:White,        'bg': s:DarkBlue,})
-call s:h('PmenuSbar',      {                      'bg': s:Gray})
-call s:h('PmenuThumb',     {                      'bg': s:BrightBlue})
-call s:h('Question',       {'fg': s:Cyan,         'bg': s:nop})
-call s:h('Search',         {'fg': s:nop,          'bg': s:DarkBlue})
-call s:h('Substitute',     {'fg': s:nop,          'bg': s:DarkBlue})
-call s:h('SpellBad',       {'fg': s:LightRed,     'bg': s:nop})
-call s:h('SpellCap',       {'fg': s:LightRed,     'bg': s:nop})
-call s:h('SpellLocal',     {'fg': s:LightRed,     'bg': s:nop})
-call s:h('StatusLine',     {'fg': s:White,        'bg': s:nop})
-call s:h('StatusLineNC',   {'fg': s:nop,          'bg': s:nop})
-call s:h('TabLine',        {'fg': s:White,        'bg': s:VeryDarkGray,   'gui': 'italic'})
-call s:h('TabLineFill',    {'fg': s:White,        'bg': s:Black,          'gui': 'italic'})
-call s:h('TabLineSel',     {'fg': s:White,        'bg': s:Black})
-call s:h('Title',          {'fg': s:Blue,                                 'gui': 'bold'})
-call s:h('Visual',         {'fg': s:nop,          'bg': s:DarkBlue,})
-call s:h('VisualNOS',      {'fg': s:nop,          'bg': s:DarkBlue,})
+call s:h('NonText',        {'fg': s:LightGray,  'bg': s:nop})
+call s:h('Pmenu',          {'fg': s:White,      'bg': s:DarkGray})
+call s:h('PmenuSel',       {'fg': s:White,      'bg': s:DarkBlue,})
+call s:h('PmenuSbar',      {                    'bg': s:LightGray})
+call s:h('PmenuThumb',     {                    'bg': s:BrightBlue})
+call s:h('Question',       {'fg': s:Cyan,       'bg': s:nop})
+call s:h('Search',         {'fg': s:nop,        'bg': s:DarkBlue})
+call s:h('Substitute',     {'fg': s:nop,        'bg': s:DarkBlue})
+call s:h('SpellBad',       {'fg': s:LightRed,   'bg': s:nop})
+call s:h('SpellCap',       {'fg': s:LightRed,   'bg': s:nop})
+call s:h('SpellLocal',     {'fg': s:LightRed,   'bg': s:nop})
+call s:h('StatusLine',     {'fg': s:White,      'bg': s:nop})
+call s:h('StatusLineNC',   {'fg': s:nop,        'bg': s:nop})
+call s:h('TabLine',        {'fg': s:White,      'bg': s:DarkGray,   'gui': 'italic'})
+call s:h('TabLineFill',    {'fg': s:White,      'bg': s:Black,      'gui': 'italic'})
+call s:h('TabLineSel',     {'fg': s:White,      'bg': s:Black})
+call s:h('Title',          {'fg': s:Blue,                           'gui': 'bold'})
+call s:h('Visual',         {'fg': s:nop,        'bg': s:DarkBlue,})
+call s:h('VisualNOS',      {'fg': s:nop,        'bg': s:DarkBlue,})
 call s:h('WarningMsg',     {'fg': s:Orange})
-call s:h('WildMenu',       {'fg': s:White,        'bg': s:DarkBlue,})
+call s:h('WildMenu',       {'fg': s:White,      'bg': s:DarkBlue,})
 
-call s:h('Comment',        {'fg': s:DarkGray,                             'gui': 'italic'})
-call s:h('SpecialComment', {'fg': s:Green,                                'gui': 'italic'})
-call s:h('SpecialKey',     {'fg': s:Green,                                'gui': 'none'})
+call s:h('Comment',        {'fg': s:Gray,                           'gui': 'italic'})
+call s:h('SpecialComment', {'fg': s:Green,                          'gui': 'italic'})
+call s:h('SpecialKey',     {'fg': s:Green,                          'gui': 'none'})
+
+call s:h('Tag',            {'fg': s:Green})
+call s:h('Debug',          {'fg': s:BrightBlue, 'bg': s:LightRed,})
+call s:h('Ignore',         {})
+call s:h('Conceal',        {'fg': s:White,      'bg': s:Black})
+call s:h('Error',          {'fg': s:LightRed})
+call s:h('Todo',           {'fg': s:White,      'bg': s:Green,      'gui': 'bold,italic'})
+call s:h('Underlined',     {                                        'gui': 'underline', 'cterm': 'underline'})
 
 call s:h('Constant',       {'fg': s:Blue})
-call s:h('Boolean',        {'fg': s:Blue})
-call s:h('String',         {'fg': s:Orange})
-call s:h('Character',      {'fg': s:Orange})
-call s:h('Number',         {'fg': s:LightGreen})
-call s:h('Float',          {'fg': s:LightGreen})
+call s:h('PreProc',        {'fg': s:Blue})
+hi link Boolean Constant
 
-call s:h('Identifier',     {'fg': s:LightBlue,})
+call s:h('String',         {'fg': s:Orange})
+hi link Character Escape
+
+call s:h('Number',         {'fg': s:LightGreen})
+hi link Float Number
+
+call s:h('Identifier',     {'fg': s:LightBlue})
+
 call s:h('Function',       {'fg': s:Yellow})
 
-call s:h('Statement',      {'fg': s:Magenta})
-call s:h('Conditional',    {'fg': s:Magenta})
-call s:h('Repeat',         {'fg': s:Magenta})
-call s:h('Label',          {'fg': s:Magenta})
-call s:h('Keyword',        {'fg': s:Magenta})
-call s:h('Exception',      {'fg': s:Magenta})
-call s:h('PreProc',        {'fg': s:Blue})
-call s:h('Include',        {'fg': s:Magenta})
-call s:h('Define',         {'fg': s:Magenta})
+hi link Conditional Control
+hi link Exception Control
+hi link Keyword Control
+hi link Define Control
+hi link Include Control
+hi link Label Control
+hi link Repeat Control
+hi link Statement Control
 call s:h('Macro',          {'fg': s:Magenta})
 call s:h('PreCondit',      {'fg': s:Magenta})
 
 call s:h('Type',           {'fg': s:Cyan})
-call s:h('Typedef',        {'fg': s:Cyan})
+hi link Typedef Type
 
-call s:h('StorageClass',   {'fg': s:Blue})
-call s:h('Structure',      {'fg': s:Blue})
+hi link Structure Storage
+hi link StorageClass Storage
 
 call s:h('Operator',       {'fg': s:White})
-call s:h('Special',        {'fg': s:White})
-call s:h('SpecialChar',    {'fg': s:White})
 call s:h('Delimiter',      {'fg': s:White})
-
-call s:h('Debug',          {'fg': s:BrightBlue, 'bg': s:LightRed,})
-call s:h('Tag',            {'fg': s:Green})
-call s:h('Underlined',     {'gui': 'underline'})
-call s:h('Conceal',        {'fg': s:White,      'bg': s:Black})
-call s:h('Ignore',         {})
-call s:h('Error',          {'fg': s:LightRed})
-call s:h('Todo',           {'fg': s:White,     'bg': s:Green,  'gui': 'bold,italic'})
+call s:h('Special',        {'fg': s:White, 'gui': 'italic'})
+call s:h('SpecialChar',    {'fg': s:White})
 
 " Help: {{{
 call s:h('helpHeadline',       {'fg': s:Magenta})
@@ -251,18 +274,18 @@ call s:h('qfLineNr',           {'fg': s:LightGreen})
 " }}}
 " }}}
 
-" ===============================================================================
+" ==============================================================================
 "  Languages & Filetypes
-" ===============================================================================
+" ==============================================================================
 
 " C: {{{
 hi link cSpecialCharacter Escape
 " }}}
 
 " C# {{{
-hi link csInterpolation Identifier
+hi link csThis Language
 hi link csNew Constant
-call s:h('csThis',      {'fg': s:Blue,   'gui': 'italic'})
+hi link csInterpolation Identifier
 hi link csInterpolationDelim Constant
 hi link csDocComment SpecialComment
 hi link csDocExample Identifier
@@ -270,27 +293,28 @@ hi link csDocString Identifier
 hi link csOperator Conditional
 hi link csModifier Conditional
 hi link csLinqKeyword Conditional
+hi link csUnspecifiedStatement Normal
 " }}}
 
 " CSS: {{{
 hi link cssBraces Gray
 hi link cssNoise  DarkGray
+hi link cssClassNameDot DarkGray
 call s:h('cssInclude',         {'fg': s:Magenta})
 call s:h('cssTagName',         {'fg': s:YellowOrange})
 call s:h('cssClassName',       {'fg': s:YellowOrange})
-hi link cssClassNameDot DarkGray
 call s:h('cssPseudoClass',     {'fg': s:YellowOrange})
 call s:h('cssPseudoClassId',   {'fg': s:YellowOrange})
 call s:h('cssPseudoClassLang', {'fg': s:YellowOrange})
 call s:h('cssIdentifier',      {'fg': s:YellowOrange})
-call s:h('cssProp',            {'fg': s:LightBlue})
+hi link cssProp Identifier
 hi link cssDefinition Identifier
-call s:h('cssAttr',            {'fg': s:Orange})
+hi link cssAttr String
 hi link cssAttrRegion String
 hi link cssColor String
-call s:h('cssFunction',        {'fg': s:Orange})
+hi link cssFunction String
+hi link cssVendor String
 hi link cssFunctionName Function
-call s:h('cssVendor',          {'fg': s:Orange})
 hi link cssValueNumber Number
 hi link cssValueLength Number
 hi link cssUnitDecorators Number
@@ -313,60 +337,55 @@ call s:h('gitconfigNone',      {'fg': s:White})
 call s:h('gitconfigEscape',    {'fg': s:YellowOrange})
 " }}}
 
-" ' Golang: {{{
-call s:h('goPackageName',           {'fg': s:White,     'gui': 'italic'})
-hi link goMain Normal
-hi link goStatement Conditional
-hi link goOperator Conditional
-call s:h('goPackage',               {'fg': s:Blue})
-" call s:h('goImport',                s:Blue})
-call s:h('goVar',                   {'fg': s:Blue})
-hi link goConst Constant
-hi link goImport Conditional
-" hi link goFormatSpecifier Identifier
-" ' call s:h('goType',                  s:Blue})
-" ' hi link goType Type
-hi link goFloats Type
-hi link goArgumentType Type
-call s:h('goType',                  {'fg': s:Cyan,   'gui': 'italic'})
-call s:h('goFloats',                {'fg': s:Cyan,   'gui': 'italic'})
-call s:h('goArgumentType',          {'fg': s:Cyan})
-" ' hi link goSimpleArguments nop
-call s:h('goSignedInts',            {'fg': s:Cyan, 'gui': 'italic'})
-call s:h('goUnsignedInts',          {'fg': s:Cyan, 'gui': 'italic'})
-call s:h('goComplexes',             {'fg': s:Blue})
-hi link goBoolean Boolean
-call s:h('goPredefinedIdentifiers', {'fg': s:Blue})
-call s:h('goDeclaration',           {'fg': s:Blue})
-call s:h('goDeclType',              {'fg': s:Blue})
-call s:h('goTypeDecl',              {'fg': s:Blue})
+" Golang: {{{
 hi link goTodo Todo
 hi link goComment Comment
 hi link goDocComment SpecialComment
-" hi link goDocComment Comment
 hi link goPackageComment Comment
-call s:h('goCommentEmphasis',       {'fg': s:YellowOrange})
-call s:h('goTypeName',              {'fg': s:Cyan})
-call s:h('goVarAssign',             {'fg': s:LightBlue})
-call s:h('goVarDefs',               {'fg': s:LightBlue})
-call s:h('goSingleDecl',            {'fg': s:LightBlue})
+hi link goCommentEmphasis Character
+hi link goMain Normal
+hi link goStatement Conditional
+hi link goOperator Conditional
+hi link goImport Conditional
+call s:h('goPackageName',           {'fg': s:White,  'gui': 'italic'})
 call s:h('goReceiver',              {'fg': s:White})
-call s:h('goReceiverVar',           {'fg': s:LightBlue})
-call s:h('goReceiverType',          {'fg': s:Cyan})
-call s:h('goFunctionCall',          {'fg': s:Yellow})
-call s:h('goMethodCall',            {'fg': s:Yellow})
-call s:h('goBuiltins',              {'fg': s:Yellow})
-hi link goEscapeC vimCtrlChar
+hi link goPackage StorageClass
+hi link goVar StorageClass
+" hi link goFormatSpecifier Identifier
+hi link goFloats Type
+hi link goArgumentType Type
+hi link goTypeName Type
+hi link goReceiverType Type
+call s:h('goType',                  {'fg': s:Cyan,   'gui': 'italic'})
+call s:h('goFloats',                {'fg': s:Cyan,   'gui': 'italic'})
+" ' hi link goSimpleArguments nop
+call s:h('goSignedInts',            {'fg': s:Cyan,   'gui': 'italic'})
+call s:h('goUnsignedInts',          {'fg': s:Cyan,   'gui': 'italic'})
+call s:h('goComplexes',             {'fg': s:Blue})
+hi link goBoolean Boolean
+hi link goPredefinedIdentifiers Constant
+hi link goConst Constant
+hi link goDeclaration Constant
+hi link goDeclType Constant
+hi link goTypeDecl Constant
+hi link goVarAssign Identifier
+hi link goVarDefs Identifier
+hi link goSingleDecl Identifier
+hi link goReceiverVar Identifier
+hi link goFunctionCall Function
+hi link goMethodCall Function
+hi link goBuiltins Function
+hi link goEscapeC Escape
 " }}}
 
 " HTML: {{{
-call s:h('htmlHead',           {'fg': s:Gray})
+call s:h('htmlHead',           {'fg': s:LightGray})
 call s:h('htmlTitle',          {'fg': s:White})
-call s:h('htmlTag',            {'fg': s:Gray})
-call s:h('htmlEndTag',         {'fg': s:Gray})
+call s:h('htmlTag',            {'fg': s:LightGray})
+call s:h('htmlEndTag',         {'fg': s:LightGray})
 call s:h('htmlTagName',        {'fg': s:Blue})
 call s:h('htmlSpecialTagName', {'fg': s:Blue})
-call s:h('htmlArg',            {'fg': s:LightBlue})
+hi link htmlArg Identifier
 call s:h('htmlBold',           {'fg': s:Magenta})
 call s:h('htmlItalic',         {'fg': s:Cyan, 'gui': 'italic'})
 hi link htmlComment Comment
@@ -380,43 +399,43 @@ hi link xmlEqual    htmlTag
 " JavaScript: {{{
 hi link jsNoise Normal
 hi link jsGlobalObjects Type
+hi link jsGlobalNodeObjects Type
+hi link jsObjectProp Type
+hi link jsClassDefinition Type
 hi link jsFuncCall Function
+hi link jsFunction Function
 hi link jsVariableDef Identifier
 hi link jsParen Identifier
 hi link jsFuncArgs Identifier
 hi link jsParenRepeat Identifier
 hi link jsParenSwitch Identifier
 hi link jsParenIfElse Identifier
-hi link jsFunction Function
 hi link jsObjectKey Identifier
-hi link jsClassDefinition Type
+hi link jsObjectStringKey Identifier
+hi link jsTemplateExpression Identifier
+hi link jsThis Language
+hi link jsClassKeyword Boolean
+hi link jsTemplateString String
+hi link jsSpecial Character
+hi link jsRegexpString RegEx
+hi link jsTemplateBraces StorageClass
+hi link jsSwitchColon Operator
 hi link jsOperator Conditional
 hi link jsExtendsKeyword Conditional
-hi link jsClassKeyword Boolean
-call s:h('jsSwitchColon',        {'fg': s:Magenta})
-call s:h('jsSpecial',            {'fg': s:YellowOrange})
-call s:h('jsRegexpString',       {'fg': s:LightRed})
-call s:h('jsThis',               {'fg': s:Blue,         'gui': 'italic'})
-call s:h('jsTemplateBraces',     {'fg': s:Blue})
-" call s:h('jsGlobalNodeObjects',  {'fg': s:Cyan})
-call s:h('jsObjectProp',         {'fg': s:Cyan})
-call s:h('jsObjectStringKey',    {'fg': s:LightBlue})
-call s:h('jsTemplateString',     {'fg': s:Orange})
-call s:h('jsTemplateExpression', {'fg': s:LightBlue})
 " }}}
 
 " JSON:
 " (elzr/vim-json) {{{
 hi link jsonString  String
 hi link jsonKeyword Identifier
-call s:h('jsonKeywordMatch', {'fg': s:DarkGray})
-call s:h('jsonBraces',       {'fg': s:DarkGray})
-call s:h('jsonNoise',        {'fg': s:DarkGray})
-call s:h('jsonQuote',        {'fg': s:DarkGray})
+call s:h('jsonKeywordMatch', {'fg': s:Gray})
+call s:h('jsonBraces',       {'fg': s:Gray})
+call s:h('jsonNoise',        {'fg': s:Gray})
+call s:h('jsonQuote',        {'fg': s:Gray})
 " (Quramy/vison)
-call s:h('jsonCommentError', {'fg': s:Gray})
-call s:h('jsonEscape',       {'fg': s:YellowOrange})
-call s:h('jsonFold',         {'fg': s:DarkGray})
+call s:h('jsonCommentError', {'fg': s:LightGray})
+hi link jsonEscape Character
+call s:h('jsonFold',         {'fg': s:Gray})
 " }}}
 
 " Lua:
@@ -430,7 +449,7 @@ call s:h('luaComma',          {})
 call s:h('luaFuncParens',     {})
 call s:h('luaSymbolOperator', {})
 call s:h('luaBraces',         {'fg': s:White})
-call s:h('luaFuncKeyword',    {'fg': s:Magenta})
+hi link luaFuncKeyword Control
 call s:h('luaTable',          {})
 call s:h('luaFuncSig',        {})
 " }}}
@@ -445,16 +464,16 @@ call s:h('markdownH5',               {'fg': s:Blue})
 call s:h('markdownH6',               {'fg': s:Blue})
 call s:h('markdownHeadingDelimiter', {'fg': s:Blue})
 call s:h('markdownItalic',           {'fg': s:LightBlue, 'gui': 'italic'})
-call s:h('markdownItalicDelimiter',  {'fg': s:DarkGray})
-call s:h('markdownBold',             {'fg': s:Magenta,      'gui': 'bold'})
-call s:h('markdownBoldDelimiter',    {'fg': s:DarkGray})
+call s:h('markdownItalicDelimiter',  {'fg': s:Gray})
+call s:h('markdownBold',             {'fg': s:Magenta,   'gui': 'bold'})
+call s:h('markdownBoldDelimiter',    {'fg': s:Gray})
 call s:h('markdownListMarker',       {'fg': s:BrightBlue})
 call s:h('markdownCode',             {'fg': s:Orange})
-call s:h('markdownCodeDelimiter',    {'fg': s:DarkGray})
-call s:h('markdownUrl',              {'fg': s:DarkGray})
+call s:h('markdownCodeDelimiter',    {'fg': s:Gray})
+call s:h('markdownUrl',              {'fg': s:Gray})
 call s:h('markdownLinkText',         {'fg': s:LightBlue})
-call s:h('markdownLinkTextDelimiter',{'fg': s:DarkGray})
-call s:h('markdownLinkDelimiter',    {'fg': s:DarkGray})
+call s:h('markdownLinkTextDelimiter',{'fg': s:Gray})
+call s:h('markdownLinkDelimiter',    {'fg': s:Gray})
 call s:h('markdownBlockquote',       {'fg': s:Green})
 " }}}
 
@@ -478,7 +497,7 @@ call s:h('mkdListItem',         {'fg': s:BrightBlue,})
 call s:h('mkdListItemLine',     {})
 call s:h('mkdNonListItemBlock', {})
 call s:h('mkdRule',             {'fg': s:Magenta})
-call s:h('mkdDelimiter',        {'fg': s:DarkGray})
+call s:h('mkdDelimiter',        {'fg': s:Gray})
 " }}}
 
 " Perl:{{{
@@ -489,32 +508,34 @@ hi link perlVarMember Type
 " Python: {{{
 call s:h('pythonRun',             {'fg': s:Blue})
 call s:h('pythonCoding',          {'fg': s:Blue})
-call s:h('pythonClassName',       {'fg': s:Cyan})
-call s:h('pythonClassVar',        {'fg': s:Blue,         'gui': 'italic'})
-call s:h('pythonCommentTitle',    {'fg': s:Green})
-call s:h('pythonDot',             {'fg': s:LightBlue})
-call s:h('pythonAttribute',       {'fg': s:LightBlue})
-call s:h('pythonFunction',        {'fg': s:Yellow})
 call s:h('pythonBuiltinFunc',     {'fg': s:Blue})
-call s:h('pythonBuiltinObj',      {'fg': s:Cyan})
-call s:h('pythonInclude',         {'fg': s:Magenta})
-call s:h('pythonOperator',        {'fg': s:Magenta})
-call s:h('pythonStatement',       {'fg': s:Magenta})
-call s:h('pythonNumber',          {'fg': s:LightGreen})
-call s:h('pythonString',          {'fg': s:Orange})
-call s:h('pythonRawString',       {'fg': s:Orange})
-call s:h('pythonFString',         {'fg': s:Orange})
-call s:h('pythonStrFormat',       {'fg': s:LightBlue})
-call s:h('pythonStrInterpRegion', {'fg': s:LightBlue})
-call s:h('pythonStrFormatting',   {'fg': s:YellowOrange})
-call s:h('pythonStrTemplate',     {'fg': s:LightBlue})
-call s:h('pythonEscape',          {'fg': s:YellowOrange})
-call s:h('pythonRawEscape',       {'fg': s:YellowOrange})
-call s:h('pythonUniEscape',       {'fg': s:YellowOrange})
-call s:h('pythonBytesEscape',     {'fg': s:YellowOrange})
-call s:h('pythonTrippleQuotes',   {'fg': s:Green})
-call s:h('pythonDocString',       {'fg': s:Green})
-call s:h('pythonComment',         {'fg': s:DarkGray,     'gui': 'italic'})
+call s:h('pythonClassVar',        {'fg': s:Blue, 'gui': 'italic'})
+hi link pythonAttribute Identifier
+hi link pythonDot Identifier
+hi link pythonFunction Function
+hi link pythonClassName Type
+hi link pythonBuiltinObj Type
+hi link pythonInclude Control
+hi link pythonOperator Control
+hi link pythonStatement Control
+hi link pythonNumber Number
+hi link pythonString String
+hi link pythonRawString String
+hi link pythonFString String
+" call s:h('pythonRawString',       {'fg': s:Orange})
+" call s:h('pythonFString',         {'fg': s:Orange})
+hi link pythonStrFormat Identifier
+hi link pythonStrInterpRegion Identifier
+hi link pythonStrTemplate Identifier
+hi link pythonStrFormatting Character
+hi link pythonEscape Character
+hi link pythonRawEscape Character
+hi link pythonUniEscape Character
+hi link pythonBytesEscape Character
+hi link pythonTrippleQuotes SpecialComment
+hi link pythonDocString SpecialComment
+hi link pythonCommentTitle SpecialComment
+hi link pythonComment Comment
 " (tweekmonster/impsort.vim)
 call s:h('pythonImport',          {'fg': s:Magenta})
 call s:h('pythonIncludeLine',     {'fg': s:Cyan})
@@ -529,7 +550,7 @@ call s:h('rubyClassNameTag', {'fg': s:Cyan})
 " }}}
 
 " Sh: {{{
-call s:h('shFunction',          {'fg': s:Yellow})
+hi link shFunction Function
 call s:h('shFunctionKey',       {'fg': s:Magenta})
 call s:h('shFunctionOne',       {'fg': s:White})
 call s:h('shFunctionTwo',       {'fg': s:White})
@@ -570,18 +591,17 @@ hi link bashBuiltinCommands Function
 " }}}
 
 " ZSH: {{{
-call s:h('zshFunction',    {'fg': s:Yellow})
-call s:h('zshParentheses', {'fg': s:White})
-call s:h('zshVariableDef', {'fg': s:LightBlue})
+hi link zshFunction Function
+hi link zshVariableDef Identifier
 call s:h('zshParentheses', {'fg': s:White})
 " }}}
 
 " Todo:
 " (todo.txt) {{{
 call s:h('todoItem',        {'fg': s:White})
-call s:h('todoID',          {'fg': s:DarkGray})
-call s:h('todoDone',        {'fg': s:Gray})
-call s:h('todoDate',        {'fg': s:Gray})
+call s:h('todoID',          {'fg': s:Gray})
+call s:h('todoDone',        {'fg': s:LightGray})
+call s:h('todoDate',        {'fg': s:LightGray})
 call s:h('todoOverDueDate', {'fg': s:LightRed})
 call s:h('todoProject',     {'fg': s:Cyan})
 call s:h('todoContext',     {'fg': s:LightBlue})
@@ -593,7 +613,7 @@ call s:h('todoPriorityC',   {'fg': s:Orange})
 call s:h('todoPriorityD',   {'fg': s:YellowOrange})
 call s:h('todoPriorityE',   {'fg': s:Yellow})
 call s:h('todoPriorityF',   {'fg': s:LightGreen})
-call s:h('todoComment',     {'fg': s:DarkGray,     'gui': 'italic'})
+call s:h('todoComment',     {'fg': s:Gray, 'gui': 'italic'})
 " }}}
 
 " TSV:
@@ -608,24 +628,25 @@ call s:h('CSVColumnHeaderOdd',  {'fg': s:Black, 'bg': s:Green})
 " VimL: {{{
 hi link vimCtrlChar YellowOrange
 call s:h('vimEcho',           {'fg': s:Yellow})
-call s:h('vimNamespace',      {'fg': s:Cyan})
-call s:h('vimCVar',           {'fg': s:Cyan})
-call s:h('vimVarNamespace',   {'fg': s:Cyan})
-call s:h('vimVar',            {'fg': s:LightBlue})
-call s:h('vimEnvVar',         {'fg': s:LightBlue,   'gui': 'italic'})
+hi link vimNamespace Type
+hi link vimCVar Type
+hi link vimVarNamespace Type
+hi link vimVar Identifier
+call s:h('vimEnvVar',         {'fg': s:LightBlue, 'gui': 'italic'})
 call s:h('vimBuiltin',        {'fg': s:Blue}) " FIXME: find a better additional context color for ≈ global scope
-call s:h('vimUserFunc',       {'fg': s:Yellow})
-call s:h('vimUsrCmd',         {'fg': s:Yellow})
-call s:h('vimDocBlock',       {'fg': s:Green})
+hi link vimFunc Function
+hi link vimUserFunc Function
+hi link vimUserCmd Function
+hi link vimDocBlock SpecialComment
 " call s:h('vimUserCmd',        {'fg': s:Yellow})
 " call s:h('vimUserAttrb',      {'fg': s:Yellow})
 " call s:h('vimUserAttrbKey',   {'fg': s:Yellow})
-call s:h('vimFunction',       {'fg': s:Yellow})
+hi link vimFunction Function
 call s:h('vimFunctionError',  {'fg': s:Red})
-call s:h('vimContinue',       {'fg': s:DarkGray})
-call s:h('vimLineComment',    {'fg': s:DarkGray,     'gui': 'italic'})
-call s:h('vimCommentTitle',   {'fg': s:Green,        'gui': 'italic'})
-call s:h('vimBracket',        {'fg': s:Gray})
+call s:h('vimContinue',       {'fg': s:Gray})
+call s:h('vimLineComment',    {'fg': s:Gray, 'gui': 'italic'})
+hi link vimCommentTitle SpecialComment
+call s:h('vimBracket',        {'fg': s:LightGray})
 call s:h('vimNotFunc',        {'fg': s:Magenta})
 call s:h('vimCommand',        {'fg': s:Magenta})
 call s:h('vimCmdSep',         {'fg': s:Magenta})
@@ -639,12 +660,12 @@ call s:h('vimSet',            {'fg': s:LightBlue})
 call s:h('vimLet',            {'fg': s:Blue})
 call s:h('vimMap',            {'fg': s:Magenta})
 call s:h('vimNotation',       {'fg': s:YellowOrange})
-call s:h('vimMapMod',         {'fg': s:Gray})
+call s:h('vimMapMod',         {'fg': s:LightGray})
 call s:h('vimMapModKey',      {'fg': s:Blue})
 call s:h('vimMapLhs',         {'fg': s:LightBlue})
 call s:h('vimMapRhs',         {'fg': s:Cyan})
-call s:h('vimIsCommand',      {'fg': s:LightBlue})
 call s:h('vimFtOption',       {'fg': s:Cyan})
+call s:h('vimIsCommand',      {'fg': s:LightBlue})
 call s:h('vimFtCmd',          {'fg': s:Magenta})
 call s:h('vimHighlight',      {'fg': s:Blue})
 call s:h('vimHiAttrib',       {'fg': s:LightBlue})
@@ -700,10 +721,10 @@ call s:h('nvimHLGroup',       {'fg': s:Violet})
 
 " YAML: {{{
 hi link yamlPlainScalar String
-call s:h('yamlBlockMappingKey',     {'fg': s:LightBlue})
-call s:h('yamlFlowString',          {'fg': s:Orange})
-call s:h('yamlFlowStringDelimiter', {'fg': s:Orange})
-call s:h('yamlEscape',              {'fg': s:YellowOrange,})
+hi link yamlBlockMappingKey Identifier
+hi link yamlFlowString String
+hi link yamlFlowStringDelimiter String
+hi link yamlEscape Character
 call s:h('yamlDocumentStart',       {'fg': s:Magenta})
 call s:h('yamlDocumentEnd',         {'fg': s:Magenta})
 call s:h('yamlKeyValueDelimiter',   {'fg': s:Magenta})
@@ -719,10 +740,10 @@ call s:h('snipSnippetBody',          {'fg': s:White})
 call s:h('snipSnippetDocString',     {'fg': s:Orange})
 call s:h('snipSnippetTrigger',       {'fg': s:Yellow})
 call s:h('snipEscape',               {'fg': s:YellowOrange})
-call s:h('snipSnippetHeader',        {'fg': s:DarkGray})
-call s:h('snipSnippetFooter',        {'fg': s:DarkGray})
-call s:h('snipSnippetFooterKeyword', {'fg': s:Gray})
-call s:h('snipSnippetHeaderKeyword', {'fg': s:Gray})
+call s:h('snipSnippetHeader',        {'fg': s:Gray})
+call s:h('snipSnippetFooter',        {'fg': s:Gray})
+call s:h('snipSnippetFooterKeyword', {'fg': s:LightGray})
+call s:h('snipSnippetHeaderKeyword', {'fg': s:LightGray})
 call s:h('snipTabStop',              {'fg': s:Blue})
 call s:h('snipTabStopDefault',       {'fg': s:LightBlue})
 call s:h('snipVisual',               {'fg': s:DarkBlue})
@@ -763,8 +784,8 @@ call s:h('tmuxOptsSetw',            {'fg': s:YellowOrange})
 call s:h('tmuxWindowPaneCmds',      {'fg': s:Yellow})
 call s:h('tmuxAttrEquals',          {'fg': s:White})
 call s:h('tmuxShellInpol',          {'fg': s:White})
-call s:h('tmuxAttrSeparator',       {'fg': s:Gray})
-call s:h('tmuxFmtInpol',            {'fg': s:Gray})
+call s:h('tmuxAttrSeparator',       {'fg': s:LightGray})
+call s:h('tmuxFmtInpol',            {'fg': s:LightGray})
 call s:h('tmuxSpecialCmds',         {'fg': s:Blue})
 call s:h('tmuxFmtInpolDelimiter',   {'fg': s:Blue})
 call s:h('tmuxAttrInpolDelimiter',  {'fg': s:Blue})
@@ -813,7 +834,7 @@ call s:h('tmuxOptionValue',         {'fg': s:Cyan})
 " call s:h('org_heading3',          {'fg': s:Green})
 " call s:h('org_heading4',          {'fg': s:YellowOrange})
 " call s:h('org_heading5',          {'fg': s:LightRed})
-" call s:h('org_shade_stars',       {'fg': s:VeryDarkGray})
+" call s:h('org_shade_stars',       {'fg': s:DarkGray})
 " call s:h('org_list_item',         {'fg': s:BrightBlue})
 " call s:h('org_list_unordered',    {'fg': s:BrightBlue})
 " call s:h('org_list_ckeckbox',     {'fg': s:BrightBlue})
@@ -830,17 +851,17 @@ call s:h('ALEError',            {})
 call s:h('ALEWarning',          {})
 call s:h('ALEStyleError',       {})
 call s:h('ALEStyleWarning',     {})
-call s:h('ALEInfoSign',         {'fg': s:LightGreen,   'bg': s:VeryDarkGray})
-call s:h('ALEErrorSign',        {'fg': s:LightRed,     'bg': s:VeryDarkGray})
-call s:h('ALEWarningSign',      {'fg': s:YellowOrange, 'bg': s:VeryDarkGray})
-call s:h('ALEStyleErrorSign',   {'fg': s:Yellow,       'bg': s:VeryDarkGray})
-call s:h('ALEStyleWarningSign', {'fg': s:Yellow,       'bg': s:VeryDarkGray})
+call s:h('ALEInfoSign',         {'fg': s:LightGreen,   'bg': s:DarkGray})
+call s:h('ALEErrorSign',        {'fg': s:LightRed,     'bg': s:DarkGray})
+call s:h('ALEWarningSign',      {'fg': s:YellowOrange, 'bg': s:DarkGray})
+call s:h('ALEStyleErrorSign',   {'fg': s:Yellow,       'bg': s:DarkGray})
+call s:h('ALEStyleWarningSign', {'fg': s:Yellow,       'bg': s:DarkGray})
 call s:h('ALEInfoLine',         {})
 call s:h('ALEErrorLine',        {})
 call s:h('ALEWarningLine',      {})
 " }}}
 
-" neomake/neomake {{{
+" (neomake/neomake) {{{
 hi link NeomakeErrorSign    ALEErrorSign
 hi link NeomakeWarningSign  ALEWarningSign
 hi link NeomakeMessagesSign ALEInfoSign
@@ -848,17 +869,17 @@ hi link NeomakeInfoSign     ALEInfoSign
 " }}}
 
 " (MattesGroeger/vim-bookmarks) {{{
-" call s:h('BookmarkSign',           {'fg': s:Cyan, 'bg': s:VeryDarkGray})
-" call s:h('BookmarkAnnotationSign', {'fg': s:Cyan, 'bg': s:VeryDarkGray})
+" call s:h('BookmarkSign',           {'fg': s:Cyan, 'bg': s:DarkGray})
+" call s:h('BookmarkAnnotationSign', {'fg': s:Cyan, 'bg': s:DarkGray})
 " call s:h('BookmarkLine',           {})
 " call s:h('BookmarkAnnotationLine', {})
 " }}}
 
 " (ap/vim-buftabline) {{{
-call s:h('BufTabLineCurrent', {'fg': s:Black,  'bg': s:Green})
-call s:h('BufTabLineActive',  {'fg': s:Green, 'bg': s:VeryDarkGray})
-call s:h('BufTabLineHidden',  {'fg': s:White, 'bg': s:VeryDarkGray})
-call s:h('BufTabLineFill',    {'bg': s:VeryDarkGray})
+call s:h('BufTabLineCurrent', {'fg': s:Black, 'bg': s:Green})
+call s:h('BufTabLineActive',  {'fg': s:Green, 'bg': s:DarkGray})
+call s:h('BufTabLineHidden',  {'fg': s:White, 'bg': s:DarkGray})
+call s:h('BufTabLineFill',    {'bg': s:DarkGray})
 " }}}
 
 " Cheat40: {{{
@@ -881,22 +902,20 @@ call s:h('BufTabLineFill',    {'bg': s:VeryDarkGray})
 " }}}
 
 " (Shougo/denite.nvim) {{{
-" call s:h('deniteMatchedChar',   {'fg': s:Cyan, 'gui': 'underline'})
+call s:h('deniteMatchedChar',   {'fg': s:Cyan, 'gui': 'underline'})
 " call s:h('deniteMatchedRange', {})
-" call s:h('deniteStatusLine', {})
-" call s:h('deniteSourceLine_',{})
-" call s:h('denitePrompt',        {'fg': s:Cyan})
-" call s:h('deniteConcealedMark', {'fg': s:DarkBlue})
-call s:h('deniteModeNormal',    {})
-call s:h('deniteModeInsert',    {})
-call s:h('deniteSource_Projectile_Name',    {'fg': s:Cyan})
+call s:h('denitePrompt',        {'fg': s:Cyan})
+call s:h('deniteConcealedMark', {'fg': s:DarkBlue})
+call s:h('deniteModeNormal',    {'fg': s:Green})
+call s:h('deniteModeInsert',    {'fg': s:Green})
+call s:h('deniteSource_Projectile_Name',   {'fg': s:Cyan})
 " }}}
 
 " (airblade/vim-gitgutter) {{{
-call s:h('GitGutterAdd',              {'fg': s:Green,        'bg': s:VeryDarkGray})
-call s:h('GitGutterChange',           {'fg': s:YellowOrange, 'bg': s:VeryDarkGray})
-call s:h('GitGutterDelete',           {'fg': s:LightRed,     'bg': s:VeryDarkGray})
-call s:h('GitGutterChangeDelete',     {'fg': s:YellowOrange, 'bg': s:VeryDarkGray})
+call s:h('GitGutterAdd',              {'fg': s:Green,        'bg': s:DarkGray})
+call s:h('GitGutterChange',           {'fg': s:YellowOrange, 'bg': s:DarkGray})
+call s:h('GitGutterDelete',           {'fg': s:LightRed,     'bg': s:DarkGray})
+call s:h('GitGutterChangeDelete',     {'fg': s:YellowOrange, 'bg': s:DarkGray})
 call s:h('GitGutterAddLine',          {})
 call s:h('GitGutterChangeLine',       {})
 call s:h('GitGutterDeleteLine',       {})
@@ -905,7 +924,7 @@ call s:h('GitGutterChangeDeleteLine', {})
 
 " (junegunn/vim-github-dashboard) {{{
 call s:h('githubNumber',  {'fg': s:LightGreen})
-call s:h('githubTime',    {'fg': s:Gray})
+call s:h('githubTime',    {'fg': s:LightGray})
 call s:h('githubUser',    {'fg': s:Blue})
 call s:h('githubBranch',  {'fg': s:Magenta})
 call s:h('githubRepo',    {'fg': s:Orange})
@@ -920,13 +939,13 @@ call s:h('githubGist',    {'fg': s:Cyan})
 
 " (hecal3/vim-leader-guide) {{{
 " call s:h('LeaderGuideKeys',     {'fg': s:Cyan})
-" call s:h('LeaderGuideBrackets', {'fg': s:DarkGray})
+" call s:h('LeaderGuideBrackets', {'fg': s:Gray})
 " call s:h('LeaderGuideDesc',     {'fg': s:Blue})
 " }}}
 
 " (justinmk/vim-sneak) {{{
-" call s:h('Sneak',      {'fg': s:nop, 'bg': s:DarkGray})
-" call s:h('SneakScope', {'fg': s:nop, 'bg': s:DarkGray})
+" call s:h('Sneak',      {'fg': s:nop, 'bg': s:Gray})
+" call s:h('SneakScope', {'fg': s:nop, 'bg': s:Gray})
 " call s:h('SneakLabel', {'fg': s:nop, 'bg': s:Cyan})
 " }}}
 
@@ -936,8 +955,8 @@ call s:h('StartifyBracket', {'fg': s:Black})
 call s:h('StartifyNumber',  {'fg': s:LightGreen,})
 call s:h('StartifyVar',     {'fg': s:LightGreen,})
 call s:h('StartifySpecial', {'fg': s:LightGreen,})
-call s:h('StartifySlash',   {'fg': s:DarkGray})
-call s:h('StartifyPath',    {'fg': s:DarkGray})
+call s:h('StartifySlash',   {'fg': s:Gray})
+call s:h('StartifyPath',    {'fg': s:Gray})
 call s:h('StartifySelect',  {})
 call s:h('StartifyHeader',  {})
 call s:h('StartifySection', {'fg': s:Magenta})
@@ -945,12 +964,12 @@ call s:h('StartifySection', {'fg': s:Magenta})
 
 " (pelodelfuego/vim-swoop) {{{
 call s:h('SwoopBufferLineHi',{})
-call s:h('SwoopPatternHi', {})
+call s:h('SwoopPatternHi',   {})
 " }}}
 
 " (majutsushi/tagbar) {{{
-call s:h('TagbarHelp',       {'fg': s:DarkGray})
-call s:h('TagbarHelpKey',    {'fg': s:Gray})
+call s:h('TagbarHelp',       {'fg': s:Gray})
+call s:h('TagbarHelpKey',    {'fg': s:LightGray})
 call s:h('TagbarHelpTitle',  {'fg': s:Violet})
 call s:h('TagbarKind',       {'fg': s:Cyan})
 call s:h('TagbarNestedKind', {'fg': s:LightGreen})
@@ -974,21 +993,21 @@ call s:h('uniteStatusInsert',             {'fg': s:Blue})
 " call s:h('uniteStatusSourceCandidates', {'fg': s:Yellow})
 " call s:h('uniteStatusHead',             {'fg': s:YellowOrange})
 call s:h('unitePrompt',                   {'fg': s:Cyan})
-" call s:h('uniteStatusLineNR',           {'fg': s:DarkGray})
+" call s:h('uniteStatusLineNR',           {'fg': s:Gray})
 " }}}
 
 " (romgrk/vimfiler-prompt) {{{
-call s:h('FilerCursor',           {'fg': s:DarkGray})
-call s:h('FilerSelected',         {'fg': s:DarkGray})
-call s:h('FilerActive',           {'fg': s:DarkGray})
-call s:h('FilerMatch',            {})
-call s:h('FilerNoMatch',          {})
-call s:h('FilerPrompt',           {'fg': s:Cyan})
-call s:h('FilerInput',            {'fg': s:DarkGray})
-call s:h('FilerCompletion',       {'fg': s:DarkGray})
+call s:h('FilerCursor',              {'fg': s:Gray})
+call s:h('FilerSelected',            {'fg': s:Gray})
+call s:h('FilerActive',              {'fg': s:Gray})
+call s:h('FilerMatch',               {})
+call s:h('FilerNoMatch',             {})
+call s:h('FilerPrompt',              {'fg': s:Cyan})
+call s:h('FilerInput',               {'fg': s:Gray})
+call s:h('FilerCompletion',          {'fg': s:Gray})
 " ' (Shougo/vimfiler)
 call s:h('vimfilerStatus',           {})
-call s:h('vimfilerColumn__devicons', {'fg': s:Gray})
+call s:h('vimfilerColumn__devicons', {'fg': s:LightGray})
 call s:h('vimfilerDirectory',        {'fg': s:Blue})
 call s:h('vimfilerCurrentDirectory', {'fg': s:Cyan,     'gui':  'italic'})
 call s:h('vimfilerMask',             {'fg': s:Blue})
@@ -999,5 +1018,5 @@ call s:h('vimfilerNormalFile',       {'fg': s:White})
 call s:h('vimfilerOpenedFile',       {'fg': s:LightBlue})
 call s:h('vimfilerClosedFile',       {'fg': s:Blue})
 call s:h('vimfilerMarkedFile',       {'fg': s:Green})
-call s:h('vimfilerROFile',           {'fg': s:Gray})
+call s:h('vimfilerROFile',           {'fg': s:LightGray})
 " }}}

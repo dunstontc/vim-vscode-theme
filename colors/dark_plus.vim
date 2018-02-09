@@ -36,7 +36,7 @@ function! s:h(group, style)
   else
     let l:ctermfg = (has_key(a:style, 'fg') ? a:style.fg.cterm : 'NONE')
     let l:ctermbg = (has_key(a:style, 'bg') ? a:style.bg.cterm : 'NONE')
-  end
+  endif
   execute 'highlight' a:group
         \ 'guifg='   (has_key(a:style, 'fg')    ? a:style.fg.gui   : 'NONE')
         \ 'guibg='   (has_key(a:style, 'bg')    ? a:style.bg.gui   : 'NONE')
@@ -97,10 +97,6 @@ let g:terminal_color_14 = s:Cyan.gui         " bright_cyan
 let g:terminal_color_15 = s:White.gui        " bright_white
 let g:terminal_color_background = g:terminal_color_0
 let g:terminal_color_foreground = g:terminal_color_7
-if &background ==? 'light'
-    let g:terminal_color_background = g:terminal_color_7
-    let g:terminal_color_foreground = g:terminal_color_2
-endif
 " }}}
 
 call s:h('DarkGray',     {'fg': s:Gray})
@@ -128,31 +124,24 @@ call s:h('Underlined',   {'gui': 'underline', 'cterm': 'underline'})
 " }}}
 " ==============================================================================
 " Scopes: {{{
-" Mainly related to flow control like `continue`, `while`, `return`, etc.
-call s:h('Control',      {'fg': s:Magenta})
-" escape sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
-call s:h('Escape',       {'fg': s:YellowOrange})
-" The Name of a function or method.
-call s:h('Function',     {'fg': s:Yellow})
-" Any numeric value.
-call s:h('Number',       {'fg': s:LightGreen})
-" Operators can either be textual (e.g. `or`) or be characters (e.g. `||`).
-call s:h('Operator',     {'fg': s:Violet})
-" Regular Expressions.
-call s:h('RegEx',        {'fg': s:LightRed})
-" Strings.
-call s:h('String',       {'fg': s:Orange})
-" Assignment keywords like `let`, `var`, `new`, etc.
-call s:h('Storage',      {'fg': s:Blue})
-" Reserved language variables like `this`, `super`, `self`, etc.
-call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'})
-" Type or Class names.
-call s:h('Type',         {'fg': s:Cyan})
-" Variables. Not all languages allow easy identification (and thus markup) of these.
-call s:h('Var',          {'fg': s:LightBlue})
+call s:h('Comment',      {'fg': s:Gray,  'gui': 'italic'})
+call s:h('DocString',    {'fg': s:Green, 'gui': 'italic'})
+call s:h('PlainText',    {'fg': s:White,   'bg': s:nop})                     " Plain text.
+call s:h('Control',      {'fg': s:Magenta, 'bg': s:nop})                     " Mainly related to flow control like `continue`, `while`, `return`, etc.
+call s:h('Escape',       {'fg': s:YellowOrange})                             " escape sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
+call s:h('Function',     {'fg': s:Yellow})                                   " The Name of a function or method.
+call s:h('Number',       {'fg': s:LightGreen})                               " Any numeric value.
+call s:h('Operator',     {'fg': s:Violet})                                   " Operators can either be textual (e.g. `or`) or be characters (e.g. `||`).
+call s:h('RegEx',        {'fg': s:LightRed})                                 " Regular Expressions.
+call s:h('String',       {'fg': s:Orange})                                   " Strings.
+call s:h('Storage',      {'fg': s:Blue})                                     " Assignment keywords like `let`, `var`, `new`, etc.
+call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'}) " Reserved language variables like `this`, `super`, `self`, etc.
+call s:h('Type',         {'fg': s:Cyan})                                     " Type or Class names.
+call s:h('Var',          {'fg': s:LightBlue})                                " Variables. Not all languages allow easy identification (and thus markup) of these.
 " }}}
+
 " ==============================================================================
-" Vim Default Colors: {{{
+" Interface: {{{
 " ==============================================================================
 call s:h('Normal',          {'fg': s:White,     'bg': s:Black})
 call s:h('NormalNC',        {                   'bg': s:DarkGray})
@@ -199,14 +188,13 @@ call s:h('StatusLineNC',   {'fg': s:nop,        'bg': s:nop})
 call s:h('TabLine',        {'fg': s:White,      'bg': s:DarkGray,   'gui': 'italic'})
 call s:h('TabLineFill',    {'fg': s:White,      'bg': s:Black,      'gui': 'italic'})
 call s:h('TabLineSel',     {'fg': s:White,      'bg': s:Black})
-call s:h('Title',          {'fg': s:Blue,                           'gui': 'bold'})
+call s:h('Title',          {'fg': s:Magenta,                        'gui': 'bold'})
 call s:h('Visual',         {'fg': s:nop,        'bg': s:DarkBlue,})
 call s:h('VisualNOS',      {'fg': s:nop,        'bg': s:DarkBlue,})
 call s:h('WarningMsg',     {'fg': s:Orange})
 call s:h('WildMenu',       {'fg': s:White,      'bg': s:DarkBlue,})
-
-call s:h('Comment',        {'fg': s:Gray,                           'gui': 'italic'})
-call s:h('SpecialComment', {'fg': s:Green,                          'gui': 'italic'})
+" call s:h('Comment',        {'fg': s:Gray,                           'gui': 'italic'})
+hi link SpecialComment DocString
 call s:h('SpecialKey',     {'fg': s:Green,                          'gui': 'none'})
 
 call s:h('Tag',            {'fg': s:Green})
@@ -217,11 +205,13 @@ call s:h('Error',          {'fg': s:LightRed})
 call s:h('Todo',           {'fg': s:White,      'bg': s:Green,      'gui': 'bold,italic'})
 call s:h('Underlined',     {                                        'gui': 'underline', 'cterm': 'underline'})
 
+" Default Syntax Groups:
 call s:h('Constant',       {'fg': s:Blue})
 call s:h('PreProc',        {'fg': s:Blue})
 hi link Boolean Constant
 
 call s:h('String',         {'fg': s:Orange})
+hi link Quote String
 hi link Character Escape
 
 call s:h('Number',         {'fg': s:LightGreen})
@@ -238,7 +228,7 @@ hi link Define Control
 hi link Include Control
 hi link Label Control
 hi link Repeat Control
-hi link Statement Control
+call s:h('Statement',      {'fg': s:Blue})
 call s:h('Macro',          {'fg': s:Magenta})
 call s:h('PreCondit',      {'fg': s:Magenta})
 
@@ -251,11 +241,10 @@ hi link StorageClass Storage
 call s:h('Operator',       {'fg': s:White})
 call s:h('Delimiter',      {'fg': s:White})
 call s:h('Special',        {'fg': s:White, 'gui': 'italic'})
-call s:h('SpecialChar',    {'fg': s:White})
+call s:h('SpecialChar',    {'fg': s:Violet}) " FIXME: what does this apply to?
 
-" Help: {{{
-call s:h('helpHeadline',       {'fg': s:Magenta})
-call s:h('helpHeader',         {'fg': s:Magenta})
+hi link helpHeadline Title
+hi link helpHeader Title
 call s:h('helpHyperTextEntry', {'fg': s:Blue})
 call s:h('helpHyperTextJump',  {'fg': s:LightBlue})
 call s:h('helpSectionDelim',   {'fg': s:BrightBlue})
@@ -266,12 +255,9 @@ call s:h('helpURL',            {'fg': s:LightBlue})
 " call s:h('helpNote',           {})
 " call s:h('helpOption',         {})
 call s:h('helpCommand',        {'fg': s:Yellow})
-" }}}
 
-" Quickfix: {{{
 call s:h('qfFileName',         {'fg': s:Blue})
 call s:h('qfLineNr',           {'fg': s:LightGreen})
-" }}}
 " }}}
 
 " ==============================================================================
@@ -293,7 +279,10 @@ hi link csDocString Identifier
 hi link csOperator Conditional
 hi link csModifier Conditional
 hi link csLinqKeyword Conditional
-hi link csUnspecifiedStatement Normal
+hi link csUnspecifiedStatement PlainText
+" FIXME: define `csContextualStatement`
+hi link csContextualStatement Control
+hi link csUnsupportedStatement PlainText
 " }}}
 
 " CSS: {{{
@@ -328,13 +317,16 @@ hi link dosiniLabel Identifier
 " }}}
 
 " Git: {{{
-hi link gitcommitHeader Normal
+hi link gitcommitSummary String
+hi link gitcommitFirstLine String
+hi link gitcommitHeader PlainText
 call s:h('gitcommitBranch',    {'fg': s:Magenta})
 call s:h('gitcommitUntracked', {'fg': s:YellowOrange,})
 hi link gitcommitWarning WarningMsg
+hi link gitcommitSelectedFile Directory
 " call s:h('gitcommitDiscarded', {'fg': s:Magenta})
-call s:h('gitconfigNone',      {'fg': s:White})
-call s:h('gitconfigEscape',    {'fg': s:YellowOrange})
+hi link gitconfigNone PlainText
+hi link gitconfigEscape Escape
 " }}}
 
 " Golang: {{{
@@ -343,7 +335,7 @@ hi link goComment Comment
 hi link goDocComment SpecialComment
 hi link goPackageComment Comment
 hi link goCommentEmphasis Character
-hi link goMain Normal
+hi link goMain PlainText
 hi link goStatement Conditional
 hi link goOperator Conditional
 hi link goImport Conditional
@@ -375,6 +367,8 @@ hi link goReceiverVar Identifier
 hi link goFunctionCall Function
 hi link goMethodCall Function
 hi link goBuiltins Function
+hi link goFormatSpecifier Constant
+call s:h('goEscapeU', {'fg': s:YellowOrange, 'gui': 'italic', 'cterm': 'italic'})
 hi link goEscapeC Escape
 " }}}
 
@@ -396,14 +390,23 @@ hi link xmlTag      htmlTag
 hi link xmlEqual    htmlTag
 " }}}
 
+" Java: {{{
+hi link javaX_JavaLang Constant
+hi link javaMethodDecl Control
+hi link javaStatement Control
+hi link javaC_JavaLang Type
+" "}}}
+
 " JavaScript: {{{
-hi link jsNoise Normal
+hi link jsThis Language
+hi link jsNoise PlainText
 hi link jsGlobalObjects Type
 hi link jsGlobalNodeObjects Type
 hi link jsObjectProp Type
 hi link jsClassDefinition Type
 hi link jsFuncCall Function
 hi link jsFunction Function
+hi link jsModuleKeyword Identifier
 hi link jsVariableDef Identifier
 hi link jsParen Identifier
 hi link jsFuncArgs Identifier
@@ -411,17 +414,41 @@ hi link jsParenRepeat Identifier
 hi link jsParenSwitch Identifier
 hi link jsParenIfElse Identifier
 hi link jsObjectKey Identifier
+hi link jsObjectProp Identifier
 hi link jsObjectStringKey Identifier
 hi link jsTemplateExpression Identifier
-hi link jsThis Language
 hi link jsClassKeyword Boolean
 hi link jsTemplateString String
 hi link jsSpecial Character
 hi link jsRegexpString RegEx
 hi link jsTemplateBraces StorageClass
 hi link jsSwitchColon Operator
-hi link jsOperator Conditional
+hi link jsReturn Conditional
+hi link jsOperator PlainText
 hi link jsExtendsKeyword Conditional
+hi link jsArrowFunction Constant
+hi link jsArrowFuncArgs Identifier
+" JSX:
+" hi link jsObjectBraces Identifier
+hi link jsxEscapeJs Escape
+" (MaxMEllon/vim-jsx-pretty)
+hi link jsxTag Gray
+hi link jsxTagName htmlTagName
+hi link jsxAttrib Identifier
+hi link jsxEqual PlainText
+hi link jsxString String
+hi link jsxCloseTag htmlTagName
+hi link jsxCloseString htmlTagName
+" (othree/othree/yajs.vim)
+hi link javascriptNodeGlobal Type
+hi link javascriptIdentifierName Identifier
+hi link javascriptObjectLabel Identifier
+hi link javascriptProp Identifier
+hi link javascriptOperator Constant
+hi link javascriptVariable Constant
+hi link javascriptEndColons Comment
+hi link javascriptBraces PlainText
+hi link javascriptBrackets PlainText
 " }}}
 
 " JSON:
@@ -454,18 +481,29 @@ call s:h('luaTable',          {})
 call s:h('luaFuncSig',        {})
 " }}}
 
+" Man: {{{
+" hi link manTitle
+" hi link manReference
+" hi link manOptionDesc
+hi link manSectionHeading Magenta
+" }}}
+
 " Markdown:
+" (tyru/markdown-codehl-onthefly.vim) {{{
+" hi link markdownHighlightcs PlainText
+" }}}
+
 " (tpope/vim-markdown) {{{
-call s:h('markdownH1',               {'fg': s:Blue})
-call s:h('markdownH2',               {'fg': s:Blue})
-call s:h('markdownH3',               {'fg': s:Blue})
-call s:h('markdownH4',               {'fg': s:Blue})
-call s:h('markdownH5',               {'fg': s:Blue})
-call s:h('markdownH6',               {'fg': s:Blue})
-call s:h('markdownHeadingDelimiter', {'fg': s:Blue})
+call s:h('markdownH1',               {'fg': s:Magenta})
+hi link markdownH2 markdownH1
+hi link markdownH3 markdownH1
+hi link markdownH4 markdownH1
+hi link markdownH5 markdownH1
+hi link markdownH6 markdownH1
+call s:h('markdownHeadingDelimiter', {'fg': s:Magenta})
 call s:h('markdownItalic',           {'fg': s:LightBlue, 'gui': 'italic'})
 call s:h('markdownItalicDelimiter',  {'fg': s:Gray})
-call s:h('markdownBold',             {'fg': s:Magenta,   'gui': 'bold'})
+call s:h('markdownBold',             {'fg': s:Blue,   'gui': 'bold'})
 call s:h('markdownBoldDelimiter',    {'fg': s:Gray})
 call s:h('markdownListMarker',       {'fg': s:BrightBlue})
 call s:h('markdownCode',             {'fg': s:Orange})
@@ -549,20 +587,34 @@ call s:h('impsortNonImport',      {'fg': s:LightBlue})
 call s:h('rubyClassNameTag', {'fg': s:Cyan})
 " }}}
 
+" SQL: {{{
+hi link sqlComment SpecialComment
+hi link sqlString String
+hi link sqlStatement Constant
+hi link sqlKeyword Conditional
+hi link sqlSpecial Type
+" }}}
+
 " Sh: {{{
 hi link shFunction Function
+hi link shFunctionTwo Function
+hi link shSet Control
+hi link shRedir Control
+hi link shOperator Control
+hi link shTestOpr Control
+hi link shVarAssign Control
+hi link shCommandSub PlainText
+hi link shCmdSubRegion Statement
 call s:h('shFunctionKey',       {'fg': s:Magenta})
 call s:h('shFunctionOne',       {'fg': s:White})
-call s:h('shFunctionTwo',       {'fg': s:White})
 call s:h('shFunctionStatement', {'fg': s:Magenta})
 call s:h('shEscape',            {'fg': s:YellowOrange})
 call s:h('shSpecial',           {'fg': s:YellowOrange})
 call s:h('shConditional',       {'fg': s:Magenta})
-call s:h('shCommandSub',        {})
 call s:h('shCmdParenRegion',    {})
-call s:h('shCmdSubRegion',      {})
 call s:h('shQuote',             {'fg': s:Orange})
-call s:h('shDoubleQuote',       {'fg': s:Orange})
+hi link shQuote String
+hi link shDoubleQuote String
 call s:h('shOption',            {'fg': s:Magenta})
 call s:h('shStatement',         {'fg': s:Blue})
 call s:h('shDeref',             {'fg': s:White})
@@ -575,7 +627,6 @@ call s:h('shDerefVarArray',     {'fg': s:LightBlue})
 call s:h('shRepeat',            {'fg': s:LightBlue})
 call s:h('shFor',               {'fg': s:LightBlue})
 call s:h('shCtrlSeq',           {'fg': s:Cyan})
-call s:h('shOperator',          {'fg': s:White})
 call s:h('shTestOpr',           {'fg': s:White})
 call s:h('shExpr',              {'fg': s:White})
 call s:h('shIf',                {'fg': s:Magenta})
@@ -593,6 +644,11 @@ hi link bashBuiltinCommands Function
 " ZSH: {{{
 hi link zshFunction Function
 hi link zshVariableDef Identifier
+hi link zshSubst Identifier
+hi link zshSubstDelim Constant
+hi link zshOperator Control
+hi link zshQuoted Escape
+call s:h('zshPrecommand', {'fg': s:Yellow, 'gui': 'italic'})
 call s:h('zshParentheses', {'fg': s:White})
 " }}}
 
@@ -735,11 +791,11 @@ call s:h('yamlKeyValueDelimiter',   {'fg': s:Magenta})
 " ==============================================================================
 
 " (SirVer/ultisnips) {{{
-call s:h('snipSnippet',              {})
+" call s:h('snipSnippet',              {})
 call s:h('snipSnippetBody',          {'fg': s:White})
-call s:h('snipSnippetDocString',     {'fg': s:Orange})
-call s:h('snipSnippetTrigger',       {'fg': s:Yellow})
-call s:h('snipEscape',               {'fg': s:YellowOrange})
+hi link snipSnippetDocString DocString
+hi link snipSnippetTrigger Function
+hi link snipEscape Character
 call s:h('snipSnippetHeader',        {'fg': s:Gray})
 call s:h('snipSnippetFooter',        {'fg': s:Gray})
 call s:h('snipSnippetFooterKeyword', {'fg': s:LightGray})
@@ -757,8 +813,7 @@ call s:h('snipGlobal',               {'fg': s:Magenta})
 call s:h('snipGlobalPHeader',        {'fg': s:Cyan})
 call s:h('snipGlobalHeaderKeyword',  {'fg': s:Magenta})
 call s:h('snipSnippetOptionFlag',    {'fg': s:Magenta})
-call s:h('snipLeadingSpaces',        {'fg': s:nop})
-call s:h('snipLeadingSpaces',        {'fg': s:nop})
+hi link snipLeadingSpaces nop
 " }}}
 
 " (Shougo/neosnippet) {{{
@@ -957,8 +1012,8 @@ call s:h('StartifyVar',     {'fg': s:LightGreen,})
 call s:h('StartifySpecial', {'fg': s:LightGreen,})
 call s:h('StartifySlash',   {'fg': s:Gray})
 call s:h('StartifyPath',    {'fg': s:Gray})
-call s:h('StartifySelect',  {})
-call s:h('StartifyHeader',  {})
+call s:h('StartifySelect',  {'fg': s:Blue})
+call s:h('StartifyHeader',  {'fg': s:Blue})
 call s:h('StartifySection', {'fg': s:Magenta})
 " }}}
 
@@ -976,7 +1031,7 @@ call s:h('TagbarNestedKind', {'fg': s:LightGreen})
 call s:h('TagbarScope',      {'fg': s:Yellow})
 call s:h('TagbarType',       {'fg': s:Cyan})
 " call s:h('TagbarParens',     {'fg': s:Cyan})
-hi link TagbarParens Normal
+hi link TagbarParens PlainText
 call s:h('TagbarSignature',  {'fg': s:LightBlue})
 call s:h('TagbarPseudoID',   {'fg': s:Magenta})
 " call s:h('TagbarFoldIcon',   {'fg': s:White})

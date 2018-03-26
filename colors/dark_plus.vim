@@ -318,12 +318,11 @@ hi link cssMedia Conditional
 hi link cssMediaBlock Conditional
 hi link cssInclude Conditional
 hi link cssIncludeKeyword Conditional
-" hi link cssSelectorOp PlainText
+hi link cssSelectorOp PlainText
 hi link cssProp Identifier
 hi link cssPropDefinition Identifier
 hi link cssCustomProperty Identifier
-hi def cssDefinition Identifier
-" call s:h('cssDefinition', {'fg': s:LightBlue})
+hi link cssDefinition Identifier
 hi link cssUnicodeEscape Character
 hi link cssAttr String
 " hi link cssAttrRegion String

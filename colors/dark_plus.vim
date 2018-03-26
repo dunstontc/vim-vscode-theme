@@ -208,10 +208,13 @@ call s:h('Underlined',     {                                        'gui': 'unde
 
 " Default Syntax Groups:
 " FIXME: Keyword to replace Constant?
-call s:h('Keyword',        {'fg': s:Blue})
-call s:h('Constant',       {'fg': s:Blue})
-call s:h('PreProc',        {'fg': s:Blue})
-hi link Boolean Constant
+" hi link Statement Blue
+" hi link Constant Statement
+call s:h('Statement', {'fg': s:Blue})
+call s:h('Constant', {'fg': s:Blue})
+call s:h('PreProc', {'fg': s:Blue})
+hi link Keyword Blue
+hi link Boolean Blue
 
 call s:h('String',         {'fg': s:Orange})
 hi link Quote String
@@ -230,11 +233,10 @@ hi link Define Control
 hi link Include Control
 hi link Label Control
 hi link Repeat Control
-call s:h('Statement',      {'fg': s:Blue   })
 call s:h('Macro',          {'fg': s:Magenta})
 call s:h('PreCondit',      {'fg': s:Magenta})
 
-call s:h('Type',           {'fg': s:Cyan})
+hi link Type Cyan
 hi link Typedef Type
 
 hi link Structure Storage
@@ -250,9 +252,9 @@ hi link helpHeader Title
 call s:h('helpHyperTextEntry', {'fg': s:Blue      })
 call s:h('helpHyperTextJump',  {'fg': s:LightBlue })
 call s:h('helpSectionDelim',   {'fg': s:BrightBlue})
-call s:h('helpExample',        {'fg': s:Orange    })
-call s:h('helpSpecial',        {'fg': s:Cyan      })
-call s:h('helpURL',            {'fg': s:LightBlue })
+hi link helpExample String
+hi link helpSpecial Type
+hi link helpURL Identifier
 " call s:h('helpBar',            {})
 " call s:h('helpNote',           {})
 " call s:h('helpOption',         {})
@@ -298,16 +300,21 @@ call s:h('csType', {'fg': s:Cyan, 'gui': 'italic', 'cterm': 'italic'})
 
 " CSS: {{{
 hi link cssBraces Gray
-hi link cssNoise  DarkGray
-hi link cssClassNameDot DarkGray
+" hi link cssNoise  DarkGray
 call s:h('cssInclude',         {'fg': s:Magenta     })
-call s:h('cssTagName',         {'fg': s:YellowOrange})
+hi link cssTagName Constant
 call s:h('cssClassName',       {'fg': s:YellowOrange})
+call s:h('cssClassNameDot',    {'fg': s:YellowOrange})
 call s:h('cssPseudoClass',     {'fg': s:YellowOrange})
 call s:h('cssPseudoClassId',   {'fg': s:YellowOrange})
 call s:h('cssPseudoClassLang', {'fg': s:YellowOrange})
 call s:h('cssIdentifier',      {'fg': s:YellowOrange})
+hi link cssVendor Type
+hi link cssInclude Conditional
+hi link cssIncludeKeyword Conditional
+hi link cssSelectorOp Conditional
 hi link cssProp Identifier
+hi link cssCustomProperty Identifier
 hi link cssDefinition Identifier
 hi link cssAttr String
 hi link cssAttrRegion String
@@ -319,6 +326,10 @@ hi link cssValueNumber Number
 hi link cssValueLength Number
 hi link cssUnitDecorators Number
 " }}}
+
+" Docker: {{{
+hi link dockerfileComment SpecialComment
+" }}}https://install.meteor.com/
 
 " Dosini: {{{
 hi link dosiniHeader Define
@@ -347,6 +358,7 @@ hi link gitconfigEscape Escape
 " }}}
 
 " Golang: {{{
+hi link gotplControl Conditional
 hi link goTodo Todo
 hi link goComment Comment
 hi link goDocComment SpecialComment
@@ -406,6 +418,7 @@ hi link htmlArg Identifier
 call s:h('htmlBold',           {'fg': s:Magenta})
 call s:h('htmlItalic',         {'fg': s:Cyan, 'gui': 'italic'})
 hi link htmlComment Comment
+hi link htmlSpecialChar Character
 hi link xmlAttrib   htmlArg
 hi link xmlTagName  htmlTagName
 hi link xmlEndTag   htmlTagName
@@ -428,6 +441,9 @@ hi link javaBraces PlainText
 " Native Vim Syntax
 hi link javaScript PlainText
 hi link javaScriptFunction Constant
+hi link javaScriptNumber Number
+hi link javaScriptStringS String
+hi link javaScriptSpecial Constant
 " ===
 hi link jsThis Language
 hi link jsNoise Comment
@@ -713,10 +729,11 @@ hi link bashBuiltinCommands Constant
 
 " ZSH: {{{
 hi link zshFunction Function
+hi link zshDeref Boolean
 hi link zshVariableDef Identifier
 hi link zshSubst Identifier
 hi link zshOption Identifier
-hi link zshSubstDelim Constant
+hi link zshSubstDelim Boolean
 hi link zshOperator Control
 hi link zshQuoted Escape
 call s:h('zshPrecommand', {'fg': s:Yellow, 'gui': 'italic'})
@@ -754,13 +771,13 @@ call s:h('CSVColumnHeaderOdd',  {'fg': s:Black, 'bg': s:Green})
 
 " VimL: {{{
 hi link vimCtrlChar YellowOrange
-call s:h('vimEcho',           {'fg': s:Yellow})
+hi link vimEcho Function
 hi link vimNamespace Type
 hi link vimCVar Type
 hi link vimVarNamespace Type
 hi link vimVar Identifier
 call s:h('vimEnvVar',         {'fg': s:LightBlue, 'gui': 'italic'})
-call s:h('vimBuiltin',        {'fg': s:Blue}) " FIXME: find a better additional context color for ≈ global scope
+hi link vimBuiltin Type
 hi link vimFunc Function
 hi link vimUserFunc Function
 hi link vimUserCmd Function
@@ -774,37 +791,37 @@ call s:h('vimContinue',       {'fg': s:Gray})
 call s:h('vimLineComment',    {'fg': s:Gray, 'gui': 'italic'})
 hi link vimCommentTitle SpecialComment
 call s:h('vimBracket',        {'fg': s:LightGray})
-call s:h('vimNotFunc',        {'fg': s:Magenta})
-call s:h('vimCommand',        {'fg': s:Magenta})
-call s:h('vimCmdSep',         {'fg': s:Magenta})
-call s:h('vimOperParen',      {'fg': s:LightBlue})
+hi link vimNotFunc Conditional
+hi link vimCommand Conditional
+hi link vimCmdSep Conditional
+hi link vimOper Conditional
+hi link vimMap Conditional
+hi link vimFtCmd Conditional
 call s:h('vimParenSep',       {'fg': s:White})
 call s:h('vimSetSep',         {'fg': s:White})
-call s:h('vimOper',           {'fg': s:Violet})
 call s:h('vimSep',            {'fg': s:White})
+call s:h('vimOperParen',      {'fg': s:LightBlue})
 call s:h('vimOption',         {'fg': s:LightBlue})
 call s:h('vimSet',            {'fg': s:LightBlue})
-call s:h('vimLet',            {'fg': s:Blue})
-call s:h('vimMap',            {'fg': s:Magenta})
-call s:h('vimNotation',       {'fg': s:YellowOrange})
-call s:h('vimMapMod',         {'fg': s:LightGray})
-call s:h('vimMapModKey',      {'fg': s:Blue})
 call s:h('vimMapLhs',         {'fg': s:LightBlue})
-call s:h('vimMapRhs',         {'fg': s:Cyan})
-call s:h('vimFtOption',       {'fg': s:Cyan})
 call s:h('vimIsCommand',      {'fg': s:LightBlue})
-call s:h('vimFtCmd',          {'fg': s:Magenta})
-call s:h('vimHighlight',      {'fg': s:Blue})
 call s:h('vimHiAttrib',       {'fg': s:LightBlue})
-call s:h('vimHiLink',         {'fg': s:YellowOrange})
-call s:h('vimHLGroup',        {'fg': s:YellowOrange})
-call s:h('vimEchoHL',         {'fg': s:Cyan})
+call s:h('vimMapMod',         {'fg': s:LightGray})
+call s:h('vimLet',            {'fg': s:Blue})
+call s:h('vimMapModKey',      {'fg': s:Blue})
+call s:h('vimHighlight',      {'fg': s:Blue})
+hi link vimMapRhs Type
+hi link vimFtOption Type
+hi link vimNotation Character
+hi link vimHLGroup Character
+hi link vimHiLink Character
+hi link vimEchoHL Type
 call s:h('vimAutoCmd',        {})
 call s:h('vimAutoEvent',      {})
 call s:h('vimAutoCmdSfxList', {})
 " ' Vim Syntax RegEx:
-call s:h('vimSynRegPat',      {'fg': s:LightRed})
-call s:h('vimPatSep',         {'fg': s:Magenta})
+hi link vimSynRegPat RegEx
+hi link vimPatSep Conditional
 call s:h('vimPatSepR',        {'fg': s:YellowOrange,})
 call s:h('vimSynPatRange',    {'fg': s:LightBlue})
 call s:h('vimSynPatMod',      {'fg': s:LightBlue})

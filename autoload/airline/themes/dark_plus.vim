@@ -37,15 +37,15 @@ let s:modified = { 'airline_c': [ s:guiGray, '', s:ctermGray, '', '' ] }
 let s:N1 = [ s:guiBG , s:Green.gui , s:ctermBG , s:Green.cterm  ]
 let s:N2 = [ s:guiBG , s:Green.gui , s:ctermBG , s:Green.cterm ]
 let s:N3 = [ s:guiFG , s:guiBG , s:ctermFG , s:ctermBG  ]
-let g:airline#themes#dark_plus#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
-let g:airline#themes#dark_plus#palette.normal_modified = s:modified
+let g:airline#themes#dark_plus#palette.normal=airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+let g:airline#themes#dark_plus#palette.normal_modified=s:modified
 
 " Insert mode
 let s:I1 = [ s:guiBG , s:LightBlue.gui , s:ctermBG , s:LightBlue.cterm  ]
-let s:I2 = s:N2
+let s:I2 = [ s:guiBG , s:LightBlue.gui , s:ctermBG , s:LightBlue.cterm  ]
 let s:I3 = s:N3
-let g:airline#themes#dark_plus#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-let g:airline#themes#dark_plus#palette.insert_modified = s:modified
+let g:airline#themes#dark_plus#palette.insert=airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+let g:airline#themes#dark_plus#palette.insert_modified=s:modified
 
 " Visual mode
 let s:V1 = [ s:guiBG , s:Magenta.gui , s:ctermBG , s:Magenta.cterm ]

@@ -310,12 +310,14 @@ call s:h('cssPseudoClassId',   {'fg': s:YellowOrange})
 call s:h('cssPseudoClassLang', {'fg': s:YellowOrange})
 call s:h('cssIdentifier',      {'fg': s:YellowOrange})
 hi link cssVendor Type
+hi link cssImportant Conditional
+hi link cssMediaBlock Conditional
 hi link cssInclude Conditional
 hi link cssIncludeKeyword Conditional
 hi link cssSelectorOp Conditional
 hi link cssProp Identifier
 hi link cssCustomProperty Identifier
-hi link cssDefinition Identifier
+" hi link cssDefinition Identifier
 hi link cssAttr String
 hi link cssAttrRegion String
 hi link cssColor String

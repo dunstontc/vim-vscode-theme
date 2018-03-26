@@ -126,18 +126,18 @@ call s:h('Underlined',   {'gui': 'underline', 'cterm': 'underline'})
 " Scopes: {{{
 call s:h('Comment',      {'fg': s:Gray,    'gui': 'italic', 'cterm': 'italic'})
 call s:h('DocString',    {'fg': s:Green,   'gui': 'italic', 'cterm': 'italic'})
-call s:h('PlainText',    {'fg': s:White,   'bg': s:nop})                     " Plain text.
-call s:h('Control',      {'fg': s:Magenta, 'bg': s:nop})                     " Mainly related to flow control like `continue`, `while`, `return`, etc.
-call s:h('Escape',       {'fg': s:YellowOrange})                             " escape sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
-call s:h('Function',     {'fg': s:Yellow})                                   " The Name of a function or method.
-call s:h('Number',       {'fg': s:LightGreen})                               " Any numeric value.
-call s:h('Operator',     {'fg': s:Violet})                                   " Operators can either be textual (e.g. `or`) or be characters (e.g. `||`).
-call s:h('RegEx',        {'fg': s:LightRed})                                 " Regular Expressions.
-call s:h('String',       {'fg': s:Orange})                                   " Strings.
-call s:h('Storage',      {'fg': s:Blue})                                     " Assignment keywords like `let`, `var`, `new`, etc.
-call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'}) " Reserved language variables like `this`, `super`, `self`, etc.
-call s:h('Type',         {'fg': s:Cyan})                                     " Type or Class names.
-call s:h('Var',          {'fg': s:LightBlue})                                " Variables. Not all languages allow easy identification (and thus markup) of these.
+call s:h('PlainText',    {'fg': s:White,   'bg': s:nop})                              " Plain text.
+call s:h('Control',      {'fg': s:Magenta, 'bg': s:nop})                              " Mainly related to flow control like `continue`, `while`, `return`, etc.
+call s:h('Escape',       {'fg': s:YellowOrange, 'gui': 'italic', 'cterm': 'italic'})  " Escape Sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
+call s:h('Function',     {'fg': s:Yellow})                                            " The Name of a function or method.
+call s:h('Number',       {'fg': s:LightGreen})                                        " Any numeric value.
+call s:h('Operator',     {'fg': s:Violet})                                            " Operators can either be textual (e.g. `or`) or be characters (e.g. `||`).
+call s:h('RegEx',        {'fg': s:LightRed})                                          " Regular Expressions.
+call s:h('String',       {'fg': s:Orange})                                            " Strings.
+call s:h('Storage',      {'fg': s:Blue})                                              " Assignment keywords like `let`, `var`, `new`, etc.
+call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'})          " Reserved language variables like `this`, `super`, `self`, etc.
+call s:h('Type',         {'fg': s:Cyan})                                              " Type or Class names.
+call s:h('Var',          {'fg': s:LightBlue})                                         " Variables. Not all languages allow easy identification (and thus markup) of these.
 " }}}
 
 " ==============================================================================
@@ -299,34 +299,42 @@ call s:h('csType', {'fg': s:Cyan, 'gui': 'italic', 'cterm': 'italic'})
 " }}}
 
 " CSS: {{{
-hi link cssBraces Gray
-" hi link cssNoise  DarkGray
+hi link cssBraces Delimiter
+hi link cssNoise  Delimiter
 call s:h('cssInclude',         {'fg': s:Magenta     })
 hi link cssTagName Constant
 call s:h('cssClassName',       {'fg': s:YellowOrange})
-call s:h('cssClassNameDot',    {'fg': s:YellowOrange})
-call s:h('cssPseudoClass',     {'fg': s:YellowOrange})
-call s:h('cssPseudoClassId',   {'fg': s:YellowOrange})
-call s:h('cssPseudoClassLang', {'fg': s:YellowOrange})
-call s:h('cssIdentifier',      {'fg': s:YellowOrange})
+hi link cssClassNameDot cssClassName
+hi link cssClassSelector cssClassName
+hi link cssClassSelectorDot cssClassName
+" call s:h('cssPseudoClassLang', {'fg': s:YellowOrange})
+" call s:h('cssIdentifier',      {'fg': s:YellowOrange})
+hi link cssPseudoClass Conditional
+hi link cssPseudoClassID Constant
+hi link cssBrowserPrefix Type
 hi link cssVendor Type
 hi link cssImportant Conditional
+hi link cssMedia Conditional
 hi link cssMediaBlock Conditional
 hi link cssInclude Conditional
 hi link cssIncludeKeyword Conditional
-hi link cssSelectorOp Conditional
+" hi link cssSelectorOp PlainText
 hi link cssProp Identifier
+hi link cssPropDefinition Identifier
 hi link cssCustomProperty Identifier
-" hi link cssDefinition Identifier
+hi def cssDefinition Identifier
+" call s:h('cssDefinition', {'fg': s:LightBlue})
+hi link cssUnicodeEscape Character
 hi link cssAttr String
-hi link cssAttrRegion String
+" hi link cssAttrRegion String
 hi link cssColor String
-hi link cssFunction String
-hi link cssVendor String
-hi link cssFunctionName Function
+hi link cssValueKeyword String
+" hi link cssFunction String
+" hi link cssFunctionName Function
 hi link cssValueNumber Number
 hi link cssValueLength Number
-hi link cssUnitDecorators Number
+" hi link cssUnitDecorators Number
+hi link cssUnits Number
 " }}}
 
 " Docker: {{{

@@ -139,7 +139,6 @@ call s:h('Language',     {'fg': s:Blue, 'gui': 'italic', 'cterm': 'italic'})    
 call s:h('Type',         {'fg': s:Cyan})                                              " Type or Class names.
 call s:h('Var',          {'fg': s:LightBlue})                                         " Variables. Not all languages allow easy identification (and thus markup) of these.
 " }}}
-
 " ==============================================================================
 " Interface: {{{
 " ==============================================================================
@@ -216,8 +215,9 @@ call s:h('PreProc', {'fg': s:Blue})
 hi link Keyword Blue
 hi link Boolean Blue
 
-call s:h('String',         {'fg': s:Orange})
-hi link Quote String
+call s:h('String', {'fg': s:Orange})
+call s:h('Quote',  {'fg': s:Orange})
+" hi link Quote String
 hi link Character Escape
 
 call s:h('Number',         {'fg': s:LightGreen})
@@ -243,7 +243,7 @@ hi link Structure Storage
 hi link StorageClass Storage
 
 call s:h('Operator',       {'fg': s:White})
-call s:h('Delimiter',      {'fg': s:White})
+call s:h('Delimiter',      {'fg': s:Gray})
 call s:h('Special',        {'fg': s:White, 'gui': 'italic'})
 call s:h('SpecialChar',    {'fg': s:Violet}) " FIXME: what does this apply to?
 
@@ -263,7 +263,6 @@ call s:h('helpCommand',        {'fg': s:Yellow    })
 call s:h('qfFileName',         {'fg': s:Blue      })
 call s:h('qfLineNr',           {'fg': s:LightGreen})
 " }}}
-
 " ==============================================================================
 "  Languages & Filetypes
 " ==============================================================================
@@ -299,9 +298,15 @@ call s:h('csType', {'fg': s:Cyan, 'gui': 'italic', 'cterm': 'italic'})
 " }}}
 
 " CSS: {{{
+hi link cssDefinitionBraces Gray
+hi link cssValueBlockDelimiters Gray
+hi link cssPseudoKeyword Conditional
+
+hi link cssComment Green
 hi link cssBraces Delimiter
 hi link cssNoise  Delimiter
-call s:h('cssInclude',         {'fg': s:Magenta     })
+hi link cssSelectorOperator Conditional
+hi link cssInclude Conditional
 hi link cssTagName Constant
 call s:h('cssClassName',       {'fg': s:YellowOrange})
 hi link cssClassNameDot cssClassName
@@ -336,6 +341,11 @@ hi link cssValueLength Number
 hi link cssUnits Number
 " }}}
 
+" Less: {{{
+hi link lessClass cssClassName
+hi link lessVariable Identifier
+" }}}
+
 " Docker: {{{
 hi link dockerfileComment SpecialComment
 " }}}https://install.meteor.com/
@@ -353,6 +363,13 @@ hi link dosbatchSwitch Character
 hi link dosbatchSpecialChar Character
 " }}}
 
+" Elixir: {{{
+hi link elixirStringDelimiter String
+hi link elixirInterpolationDelimiter Constant
+hi link elixirId Identifier
+hi link elixirOperator Conditional
+" }}}
+
 " Git: {{{
 hi link gitcommitSummary String
 hi link gitcommitFirstLine String
@@ -367,17 +384,20 @@ hi link gitconfigEscape Escape
 " }}}
 
 " Golang: {{{
-hi link gotplControl Conditional
+call s:h('goStandardLib', {'fg': s:White, 'gui': 'italic', 'cterm': 'italic'})
+hi link goComment SpecialComment
+hi link goTmplComment Comment
+hi link goPackageComment SpecialComment
+hi link goDocComment Comment
+hi link goTmplControl Conditional
+hi link goTmplAction Type
 hi link goTodo Todo
-hi link goComment Comment
-hi link goDocComment SpecialComment
-hi link goPackageComment Comment
 hi link goCommentEmphasis Character
 hi link goMain PlainText
 hi link goStatement Conditional
 hi link goOperator Conditional
-hi link goImport Conditional
-call s:h('goPackageName',           {'fg': s:White,  'gui': 'italic'})
+hi link goImport Constant
+call s:h('goPackageName',           {'fg': s:White,  'gui': 'italic', 'cterm': 'italic' })
 call s:h('goReceiver',              {'fg': s:White})
 hi link goPackage StorageClass
 hi link goVar StorageClass
@@ -386,12 +406,12 @@ hi link goFloats Type
 hi link goArgumentType Type
 hi link goTypeName Type
 hi link goReceiverType Type
-call s:h('goType',                  {'fg': s:Cyan,   'gui': 'italic'})
-call s:h('goFloats',                {'fg': s:Cyan,   'gui': 'italic'})
+call s:h('goType',                  {'fg': s:Cyan,   'gui': 'italic', 'cterm': 'italic'})
+call s:h('goFloats',                {'fg': s:Cyan,   'gui': 'italic', 'cterm': 'italic'})
 " ' hi link goSimpleArguments nop
-call s:h('goSignedInts',            {'fg': s:Cyan,   'gui': 'italic'})
-call s:h('goUnsignedInts',          {'fg': s:Cyan,   'gui': 'italic'})
-call s:h('goComplexes',             {'fg': s:Blue})
+call s:h('goSignedInts',            {'fg': s:Cyan,   'gui': 'italic', 'cterm': 'italic'})
+call s:h('goUnsignedInts',          {'fg': s:Cyan,   'gui': 'italic', 'cterm': 'italic'})
+call s:h('goComplexes',             {'fg': s:Cyan,   'gui': 'italic', 'cterm': 'italic'})
 hi link goBoolean Boolean
 hi link goPredefinedIdentifiers Constant
 hi link goConst Constant
@@ -428,6 +448,7 @@ call s:h('htmlBold',           {'fg': s:Magenta})
 call s:h('htmlItalic',         {'fg': s:Cyan, 'gui': 'italic'})
 hi link htmlComment Comment
 hi link htmlSpecialChar Character
+hi link xmlDocTypeDecl DarkGray
 hi link xmlAttrib   htmlArg
 hi link xmlTagName  htmlTagName
 hi link xmlEndTag   htmlTagName
@@ -576,18 +597,23 @@ hi link markdownH3 markdownH1
 hi link markdownH4 markdownH1
 hi link markdownH5 markdownH1
 hi link markdownH6 markdownH1
+hi link markdownRule markdownH1
 call s:h('markdownHeadingDelimiter', {'fg': s:Magenta})
 call s:h('markdownItalic',           {'fg': s:LightBlue, 'gui': 'italic'})
 call s:h('markdownItalicDelimiter',  {'fg': s:Gray})
 call s:h('markdownBold',             {'fg': s:Blue,   'gui': 'bold'})
 call s:h('markdownBoldDelimiter',    {'fg': s:Gray})
 call s:h('markdownListMarker',       {'fg': s:BrightBlue})
-call s:h('markdownCode',             {'fg': s:Orange})
-call s:h('markdownCodeDelimiter',    {'fg': s:Gray})
-call s:h('markdownUrl',              {'fg': s:Gray})
-call s:h('markdownLinkText',         {'fg': s:LightBlue})
-call s:h('markdownLinkTextDelimiter',{'fg': s:Gray})
-call s:h('markdownLinkDelimiter',    {'fg': s:Gray})
+hi link markdownCode String
+hi link markdownLinkText Identifier
+hi link markdownCodeDelimiter Delimiter
+hi link markdownUrl Delimiter
+hi link markdownLinkDelimiter Delimiter
+hi link markdownLinkTextDelimiter Delimiter
+" call s:h('markdownCodeDelimiter',    {'fg': s:Gray})
+" call s:h('markdownUrl',              {'fg': s:Gray})
+" call s:h('markdownLinkTextDelimiter',{'fg': s:Gray})
+" call s:h('markdownLinkDelimiter',    {'fg': s:Gray})
 call s:h('markdownBlockquote',       {'fg': s:Green})
 " }}}
 
@@ -674,6 +700,10 @@ call s:h('impsortNonImport',      {'fg': s:LightBlue})
 " }}}
 
 " Ruby: {{{
+hi link rubyInterpolation Identifier
+hi link rubyLocalVariableOrMethod Identifier
+hi link rubyInterpolationDelimiter Constant
+hi link rubyOperator Conditional
 hi link rubyControl Conditional
 hi link rubyBlockParameterList htmlTag
 hi link rubyBlockParameter Identifier
@@ -681,6 +711,21 @@ hi link rubySymbol Identifier
 hi link rubyClassNameTag Type
 hi link rubyString String
 hi link rubyStringDelimiter String
+" }}}
+
+" Rust: {{{
+call s:h('rustSelf', {'fg': s:Blue, 'gui': 'italic'})
+hi link rustEscape Character
+hi link rustPunctuation Comment
+hi link rustDot Conditional
+hi link rustControlKeyword Conditional
+
+hi link rustMacro Function
+hi link rustModPath Type
+hi link rustOperator Conditional
+hi link rustSigil Constant
+hi link rustPlaceholder Constant
+hi link rustModPathSep Magenta
 " }}}
 
 " SQL: {{{
@@ -803,7 +848,7 @@ call s:h('vimBracket',        {'fg': s:LightGray})
 hi link vimNotFunc Conditional
 hi link vimCommand Conditional
 hi link vimCmdSep Conditional
-hi link vimOper Conditional
+hi link vimOper Magenta
 hi link vimMap Conditional
 hi link vimFtCmd Conditional
 call s:h('vimParenSep',       {'fg': s:White})
@@ -890,14 +935,13 @@ call s:h('yamlKeyValueDelimiter',   {'fg': s:Magenta})
 " (SirVer/ultisnips) {{{
 " call s:h('snipSnippet',              {})
 hi link snipSnippetBody String
-hi link snipSnippetDocString DocString
+hi link snipSnippetDocString PlainText
 hi link snipSnippetTrigger Conditional
 hi link snipEscape Character
-call s:h('snipSnippetHeader',        {'fg': s:Gray})
-call s:h('snipSnippetFooter',        {'fg': s:Gray})
-call s:h('snipSnippetFooterKeyword', {'fg': s:LightGray})
-" call s:h('snipSnippetHeaderKeyword', {'fg': s:LightGray})
-hi link snipSnippetHeaderKeyword Function
+hi link snipSnippetHeader Comment
+hi link snipSnippetFooter Comment
+hi link snipSnippetFooterKeyword Comment
+hi link snipSnippetHeaderKeyword Comment
 call s:h('snipTabStop',              {'fg': s:Blue})
 call s:h('snipTabStopDefault',       {'fg': s:LightBlue})
 call s:h('snipVisual',               {'fg': s:DarkBlue})

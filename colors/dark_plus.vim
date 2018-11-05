@@ -668,6 +668,7 @@ hi link pythonAttribute Identifier
 hi link pythonDot Identifier
 hi link pythonFunction Function
 hi link pythonClassName Type
+hi link pythonBuiltin Type
 hi link pythonBuiltinObj Type
 hi link pythonInclude Control
 hi link pythonOperator Control

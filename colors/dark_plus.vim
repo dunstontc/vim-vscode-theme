@@ -664,7 +664,7 @@ call s:h('pythonRun',             {'fg': s:Blue})
 call s:h('pythonCoding',          {'fg': s:Blue})
 call s:h('pythonBuiltinFunc',     {'fg': s:Blue})
 call s:h('pythonClassVar',        {'fg': s:Blue, 'gui': 'italic'})
-hi link pythonAttribute Identifier
+call s:h('pythonAttribute',          {'fg': s:Blue})
 hi link pythonDot Identifier
 hi link pythonFunction Function
 hi link pythonClassName Type

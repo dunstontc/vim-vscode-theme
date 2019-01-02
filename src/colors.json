@@ -1,0 +1,24 @@
+[
+  { "name": "nop",          "gui": "NONE",    "cterm16":"NONE","cterm": "NONE"},
+
+  { "name": "White",        "gui": "#d4d4d4", "cterm16": "7",  "cterm": "188" },
+  { "name": "LightGray",    "gui": "#808080", "cterm16": "7",  "cterm": "244" },
+  { "name": "Gray",         "gui": "#505050", "cterm16": "0",  "cterm": "08"  },
+  { "name": "DarkGray",     "gui": "#303030", "cterm16": "0",  "cterm": "234" },
+  { "name": "Black",        "gui": "#1e1e1e", "cterm16": "0",  "cterm": "234" },
+
+  { "name": "Red",          "gui": "#f44747", "cterm16": "1",  "cterm": "203" },
+  { "name": "LightRed",     "gui": "#d16969", "cterm16": "1",  "cterm": "167" },
+  { "name": "Orange",       "gui": "#ce9178", "cterm16": "3",  "cterm": "173" },
+  { "name": "YellowOrange", "gui": "#d7ba7d", "cterm16": "3",  "cterm": "179" },
+  { "name": "Yellow",       "gui": "#dcdcaa", "cterm16": "3",  "cterm": "187" },
+  { "name": "Green",        "gui": "#608b4e", "cterm16": "2",  "cterm": "65"  },
+  { "name": "LightGreen",   "gui": "#b5cea8", "cterm16": "9",  "cterm": "151" },
+  { "name": "Blue",         "gui": "#569cd6", "cterm16": "4",  "cterm": "75"  },
+  { "name": "LightBlue",    "gui": "#9cdcfe", "cterm16": "6",  "cterm": "117" },
+  { "name": "DarkBlue",     "gui": "#264f78", "cterm16": "4",  "cterm": "24"  },
+  { "name": "BrightBlue",   "gui": "#007acc", "cterm16": "4",  "cterm": "33"  },
+  { "name": "Cyan",         "gui": "#4ec9b0", "cterm16": "6",  "cterm": "43"  },
+  { "name": "Magenta",      "gui": "#c586c0", "cterm16": "13", "cterm": "176" },
+  { "name": "Violet",       "gui": "#646695", "cterm16": "7",  "cterm": "60"  }
+]

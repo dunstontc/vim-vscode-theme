@@ -104,48 +104,55 @@ call s:h("Error",          {"fg": s:LightRed})
 call s:h("Todo",           {"fg": s:White,      "bg": s:Green,      "gui": "bold,italic"})
 call s:h("Underlined",     {                                        "gui": "underline", "cterm": "underline"})
 
-" Default Syntax Groups:
-" FIXME: Keyword to replace Constant?
-" hi link Statement Blue
-" hi link Constant Statement
-call s:h("Statement", {"fg": s:Blue})
-call s:h("Constant", {"fg": s:Blue})
-call s:h("PreProc", {"fg": s:Blue})
-hi link Keyword Blue
-hi link Boolean Blue
+" " Default Syntax Groups:
+" " FIXME: Keyword to replace Constant?
+" " hi link Constant Statement
+" call s:h("Statement", {"fg": s:Blue})
+" call s:h("Constant", {"fg": s:Blue})
+" call s:h("PreProc", {"fg": s:Blue})
+" hi link Keyword Blue
+" hi link Boolean Blue
 
-call s:h("String", {"fg": s:Orange})
-call s:h("Quote",  {"fg": s:Orange})
-" hi link Quote String
-hi link Character Escape
+" call s:h("String", {"fg": s:Orange})
+" call s:h("Quote",  {"fg": s:Orange})
+" " hi link Quote String
+" hi link Character Escape
 
-call s:h("Number",         {"fg": s:LightGreen})
-hi link Float Number
+" call s:h("Number",         {"fg": s:LightGreen})
+" hi link Float Number
 
-call s:h("Identifier",     {"fg": s:LightBlue})
+" call s:h("Identifier",     {"fg": s:LightBlue})
 
-call s:h("Function",       {"fg": s:Yellow})
+" call s:h("Function",       {"fg": s:Yellow})
 
-hi link Conditional Control
-hi link Exception Control
-hi link Define Control
-hi link Include Control
-hi link Label Control
-hi link Repeat Control
-call s:h("Macro",          {"fg": s:Magenta})
-call s:h("PreCondit",      {"fg": s:Magenta})
+" hi link Conditional Control
+" hi link Exception Control
+" hi link Define Control
+" hi link Include Control
+" hi link Label Control
+" hi link Repeat Control
+" call s:h("Macro",          {"fg": s:Magenta})
+" call s:h("PreCondit",      {"fg": s:Magenta})
 
-hi link Type Cyan
-hi link Typedef Type
+" hi link Type Cyan
+" hi link Typedef Type
 
-hi link Structure Storage
-hi link StorageClass Storage
+" hi link Structure Storage
+" hi link StorageClass Storage
 
-call s:h("Operator",       {"fg": s:White})
-call s:h("Delimiter",      {"fg": s:Gray})
-call s:h("Special",        {"fg": s:White, "gui": "italic"})
-call s:h("SpecialChar",    {"fg": s:Violet}) " FIXME: what does this apply to?
+" call s:h("Operator",       {"fg": s:White})
+" call s:h("Delimiter",      {"fg": s:Gray})
+" call s:h("Special",        {"fg": s:White, "gui": "italic"})
+" call s:h("SpecialChar",    {"fg": s:Violet}) " FIXME: what does this apply to?
 
+" call s:h("qfFileName",         {"fg": s:Blue      })
+" call s:h("qfLineNr",           {"fg": s:LightGreen})
+" }}}
+" ==============================================================================
+"  Languages & Filetypes
+" ==============================================================================
+
+" help {{{
 hi link helpHeadline Title
 hi link helpHeader Title
 call s:h("helpHyperTextEntry", {"fg": s:Blue      })
@@ -158,13 +165,7 @@ hi link helpURL Identifier
 " call s:h("helpNote",           {})
 " call s:h("helpOption",         {})
 call s:h("helpCommand",        {"fg": s:Yellow    })
-
-call s:h("qfFileName",         {"fg": s:Blue      })
-call s:h("qfLineNr",           {"fg": s:LightGreen})
 " }}}
-" ==============================================================================
-"  Languages & Filetypes
-" ==============================================================================
 
 " C: {{{
 hi link cConstant Constant

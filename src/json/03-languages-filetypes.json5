@@ -1,0 +1,919 @@
+[
+// ==============================================================================
+//  Languages & Filetypes
+// ==============================================================================
+
+// C: {{{
+{"group": "cConstant",         "link":  "Constant"},
+{"group": "cStatement",        "link":  "Conditional"},
+{"group": "cInclude",          "link":  "Constant"},
+{"group": "cIncluded",         "link":  "Identifier"},
+{"group": "cSpecial",          "link": "Character"},
+{"group": "cFormat",           "link": "Identifier"},
+{"group": "cSpecialCharacter", "link": "Escape"},
+{"group": "cType", "style":    {"fg": "Cyan", "styling": "italic"}},
+// }}}
+
+// C# {{{
+{"group": "csThis", "link": "Language"},
+{"group": "csNew", "link": "Constant"},
+{"group": "csInterpolation", "link": "Identifier"},
+{"group": "csInterpolationDelim", "link": "Constant"},
+{"group": "csDocComment", "link": "SpecialComment"},
+{"group": "csDocExample", "link": "Identifier"},
+{"group": "csDocString", "link": "Identifier"},
+{"group": "csOperator", "link": "Conditional"},
+{"group": "csOperLambda", "link": "Conditional"},
+{"group": "csModifier", "link": "Conditional"},
+{"group": "csLinqKeyword", "link": "Conditional"},
+{"group": "csUnspecifiedStatement", "link": "PlainText"},
+{"group": "csContextualStatement", "link": "Control"},  // FIXME: define `csContextualStatement`
+{"group": "csUnsupportedStatement", "link": "PlainText"},
+{"group": "csType", "style": {"fg": "Cyan", "styling": "italic"}},
+// }}}
+
+// CSS: {{{
+{"group": "cssDefinitionBraces", "link": "Gray"},
+{"group": "cssValueBlockDelimiters", "link": "Gray"},
+{"group": "cssPseudoKeyword", "link": "Conditional"},
+
+{"group": "cssComment", "link": "Green"},
+{"group": "cssBraces", "link": "Delimiter"},
+{"group": "cssNoise", "link": "Delimiter"},
+{"group": "cssSelectorOperator", "link": "Conditional"},
+{"group": "cssInclude", "link": "Conditional"},
+{"group": "cssTagName", "link": "Constant"},
+{"group": "cssClassName", "style": {"fg": "YellowOrange"}},
+{"group": "cssClassNameDot", "link": "cssClassName"},
+{"group": "cssClassSelector", "link": "cssClassName"},
+{"group": "cssClassSelectorDot", "link": "cssClassName"},
+// {"group": "cssPseudoClassLang", "style": {"fg": "YellowOrange"}},
+// {"group": "cssIdentifier", "style":      {"fg": "YellowOrange"}},
+{"group": "cssPseudoClass", "link": "Conditional"},
+{"group": "cssPseudoClassID", "link": "Constant"},
+{"group": "cssBrowserPrefix", "link": "Type"},
+{"group": "cssVendor", "link": "Type"},
+{"group": "cssImportant", "link": "Conditional"},
+{"group": "cssMedia", "link": "Conditional"},
+{"group": "cssMediaBlock", "link": "Conditional"},
+{"group": "cssInclude", "link": "Conditional"},
+{"group": "cssIncludeKeyword", "link": "Conditional"},
+{"group": "cssSelectorOp", "link": "PlainText"},
+{"group": "cssProp", "link": "Identifier"},
+{"group": "cssPropDefinition", "link": "Identifier"},
+{"group": "cssCustomProperty", "link": "Identifier"},
+{"group": "cssDefinition", "link": "Identifier"},
+{"group": "cssUnicodeEscape", "link": "Character"},
+{"group": "cssAttr", "link": "String"},
+// {"group": "cssAttrRegion", "link": "String"},
+{"group": "cssColor", "link": "String"},
+{"group": "cssValueKeyword", "link": "String"},
+// {"group": "cssFunction", "link": "String"},
+// {"group": "cssFunctionName", "link": "Function"},
+{"group": "cssValueNumber", "link": "Number"},
+{"group": "cssValueLength", "link": "Number"},
+// {"group": "cssUnitDecorators", "link": "Number"},
+// {"group": "cssUnits", "link": "Number"},
+// }}}
+
+// Les {{{
+{"group": "lessClass",    "link": "cssClassName"},
+{"group": "lessVariable", "link": "Identifier"},
+// }}}
+
+// Docker: {{{
+{"group": "dockerfileComment", "link": "Identifier"},
+// }}}
+
+// Dosini: {{{
+{"group": "dosiniHeader",  "link": "Define"},
+{"group": "dosiniNumber",  "link": "Number"},
+{"group": "dosiniComment", "link": "Comment"},
+{"group": "dosiniLabel",   "link": "Identifier"},
+// }}}
+
+// Dosbatch: {{{
+{"group": "dosbatchEchoOperator", "link": "Constant"},
+{"group": "dosbatchSwitch",       "link": "Character"},
+{"group": "dosbatchSpecialChar",  "link": "Character"},
+// }}}
+
+// Elixir: {{{
+{"group": "elixirStringDelimiter", "link": "String"},
+{"group": "elixirInterpolationDelimiter", "link": "Constant"},
+{"group": "elixirId", "link": "Identifier"},
+{"group": "elixirOperator", "link": "Conditional"},
+// }}}
+
+// Git: {{{
+{"group": "gitcommitSummary", "link": "String"},
+{"group": "gitcommitFirstLine", "link": "String"},
+{"group": "gitcommitHeader", "link": "PlainText"},
+{"group": "gitcommitBranch", "style":    {"fg": "Magenta"}},
+{"group": "gitcommitUntracked", "style": {"fg": "YellowOrange"}},
+{"group": "gitcommitWarning", "link": "WarningMsg"},
+{"group": "gitcommitSelectedFile", "link": "Directory"},
+// {"group": "gitcommitDiscarded", "style": {"fg": "Magenta"}},
+{"group": "gitconfigNone", "link": "PlainText"},
+{"group": "gitconfigEscape", "link": "Escape"},
+// }}}
+
+// Golang: {{{
+{"group": "goStandardLib", "style": {"fg": "White", "styling": "italic"}},
+{"group": "goComment", "link": "SpecialComment"},
+{"group": "goTmplComment", "link": "Comment"},
+{"group": "goPackageComment", "link": "SpecialComment"},
+{"group": "goDocComment", "link": "Comment"},
+{"group": "goTmplControl", "link": "Conditional"},
+{"group": "goTmplAction", "link": "Type"},
+{"group": "goTodo", "link": "Todo"},
+{"group": "goCommentEmphasis", "link": "Character"},
+{"group": "goMain", "link": "PlainText"},
+{"group": "goStatement", "link": "Conditional"},
+{"group": "goOperator", "link": "Conditional"},
+{"group": "goImport", "link": "Constant"},
+{"group": "goPackageName",  "style":         {"fg": "White",  "styling": "italic" }},
+{"group": "goReceiver", "style":              {"fg": "White"}},
+// {"group": "goPackage", "style": {"fg": "StorageClass"}},
+// {"group": "goVar", "style": {"fg": "StorageClass"}},
+// {"group": "goFormatSpecifier", "link": "Identifier"},
+{"group": "goFloats", "link": "Type"},
+{"group": "goArgumentType", "link": "Type"},
+{"group": "goTypeName", "link": "Type"},
+{"group": "goReceiverType", "link": "Type"},
+{"group":  "goType", "style":                 {"fg": "Cyan",   "styling": "italic"}},
+{"group":  "goFloats", "style":               {"fg": "Cyan",   "styling": "italic"}},
+// {"group": "goSimpleArguments", "link": "nop"},
+{"group":  "goSignedInts", "style":           {"fg": "Cyan",   "styling": "italic"}},
+{"group":  "goUnsignedInts", "style":         {"fg": "Cyan",   "styling": "italic"}},
+{"group":  "goComplexes", "style":            {"fg": "Cyan",   "styling": "italic"}},
+{"group": "goBoolean", "link": "Boolean"},
+{"group": "goPredefinedIdentifiers", "link": "Constant"},
+{"group": "goConst", "link": "Constant"},
+{"group": "goDeclaration", "link": "Constant"},
+{"group": "goDeclType", "link": "Constant"},
+{"group": "goTypeDecl", "link": "Constant"},
+{"group": "goVarAssign", "link": "Identifier"},
+{"group": "goVarDefs", "link": "Identifier"},
+{"group": "goSingleDecl", "link": "Identifier"},
+{"group": "goReceiverVar", "link": "Identifier"},
+{"group": "goFunctionCall", "link": "Function"},
+{"group": "goMethodCall", "link": "Function"},
+{"group": "goBuiltins", "link": "Function"},
+{"group": "goFormatSpecifier", "link": "Constant"},
+{"group": "goEscapeC", "link": "Escape"},
+{"group": "goEscapeU", "style": {"fg": "YellowOrange", "styling": "italic"}},
+// }}}
+
+// HTML: {{{
+{"group": "htmlH1", "link": "PlainText"},
+{"group": "htmlH2", "link": "PlainText"},
+{"group": "htmlH3", "link": "PlainText"},
+{"group": "htmlH4", "link": "PlainText"},
+{"group": "htmlH5", "link": "PlainText"},
+{"group": "htmlH6", "link": "PlainText"},
+{"group": "htmlHead", "style":           {"fg": "LightGray"}},
+{"group": "htmlTitle", "style":          {"fg": "White"}},
+{"group": "htmlTag", "style":            {"fg": "LightGray"}},
+{"group": "htmlEndTag", "style":         {"fg": "LightGray"}},
+{"group": "htmlTagName", "style":        {"fg": "Blue"}},
+{"group": "htmlSpecialTagName", "style": {"fg": "Blue"}},
+{"group": "htmlBold", "style":           {"fg": "Magenta"}},
+{"group": "htmlItalic", "style":         {"fg": "Cyan", "styling": "italic"}},
+{"group": "htmlArg", "link": "Identifier"},
+{"group": "htmlComment", "link": "Comment"},
+{"group": "htmlSpecialChar", "link": "Character"},
+{"group": "xmlDocTypeDecl", "link": "DarkGray"},
+{"group": "xmlAttrib", "link": " htmlArg"},
+{"group": "xmlTagName", "link": "htmlTagName"},
+{"group": "xmlEndTag", "link": "htmlTagName"},
+{"group": "xmlTag", "link": "htmlTag"},
+{"group": "xmlEqual", "link": "htmlTag"},
+// }}}
+
+// Java: {{{
+{"group": "javaX_JavaLang",  "link": "Constant"},
+{"group": "javaOperator",    "link": "Constant"},
+{"group": "javaMethodDecl",  "link": "Control"},
+{"group": "javaStatement",   "link": "Control"},
+{"group": "javaC_JavaLang",  "link": "Type"},
+{"group": "javaSpecialChar", "link": "Character"},
+{"group": "javaAnnotation",  "link": "Conditional"},
+{"group": "javaBraces",      "link": "PlainText"},
+// //}}}
+
+// JavaScript: {{{
+// Native Vim Syntax
+{"group": "javaScript", "link": "PlainText"},
+{"group": "javaScriptFunction", "link": "Constant"},
+{"group": "javaScriptNumber", "link": "Number"},
+{"group": "javaScriptStringS", "link": "String"},
+{"group": "javaScriptSpecial", "link": "Constant"},
+// ===
+{"group": "jsThis", "link": "Language"},
+{"group": "jsNoise", "link": "Comment"},
+{"group": "jsGlobalObjects", "link": "Type"},
+{"group": "jsGlobalNodeObjects", "link": "Type"},
+{"group": "jsObjectProp", "link": "Type"},
+{"group": "jsClassDefinition", "link": "Type"},
+{"group": "jsFuncCall", "link": "Function"},
+{"group": "jsFunction", "link": "Constant"},
+{"group": "jsFunctionKey", "link": "Identifier"},
+{"group": "jsModuleKeyword", "link": "Identifier"},
+{"group": "jsVariableDef", "link": "Identifier"},
+{"group": "jsParen", "link": "Identifier"},
+{"group": "jsFuncArgs", "link": "Identifier"},
+{"group": "jsParenRepeat", "link": "Identifier"},
+{"group": "jsParenSwitch", "link": "Identifier"},
+{"group": "jsParenIfElse", "link": "Identifier"},
+{"group": "jsObjectKey", "link": "Identifier"},
+{"group": "jsObjectProp", "link": "Identifier"},
+{"group": "jsObjectStringKey", "link": "Identifier"},
+{"group": "jsTemplateExpression", "link": "Identifier"},
+{"group": "jsClassKeyword", "link": "Boolean"},
+{"group": "jsTemplateString", "link": "String"},
+{"group": "jsSpecial", "link": "Character"},
+{"group": "jsRegexpString", "link": "RegEx"},
+{"group": "jsTemplateBraces", "link": "StorageClass"},
+{"group": "jsSwitchColon", "link": "Operator"},
+{"group": "jsReturn", "link": "Conditional"},
+{"group": "jsOperator", "link": "Conditional"},
+{"group": "jsExtendsKeyword", "link": "Constant"},
+{"group": "jsArrowFunction", "link": "Constant"},
+{"group": "jsArrowFuncArgs", "link": "Identifier"},
+// JSX:
+{"group": "jsxEscapeJs", "link": "Escape"},
+{"group": "jsxAttributeBraces", "link": "Constant"},
+// (MaxMEllon/vim-jsx-pretty}
+{"group": "jsxTag", "link": "Gray"},
+{"group": "jsxTagName", "link": "htmlTagName"},
+{"group": "jsxAttrib", "link": "Identifier"},
+{"group": "jsxEqual", "link": "PlainText"},
+{"group": "jsxString", "link": "String"},
+{"group": "jsxCloseTag", "link": "htmlTagName"},
+{"group": "jsxCloseString", "link": "htmlTagName"},
+// (othree/othree/yajs.vim}
+{"group": "javascriptNodeGlobal", "link": "Type"},
+{"group": "javascriptIdentifierName", "link": "Identifier"},
+{"group": "javascriptObjectLabel", "link": "Identifier"},
+{"group": "javascriptProp", "link": "Identifier"},
+{"group": "javascriptOperator", "link": "Constant"},
+{"group": "javascriptVariable", "link": "Constant"},
+{"group": "javascriptEndColons", "link": "Comment"},
+{"group": "javascriptBraces", "link": "PlainText"},
+{"group": "javascriptBrackets", "link": "PlainText"},
+// (pangloss/vim-javascript}
+{"group": "jsNull", "link": "Constant"},
+{"group": "jsDecorator", "link": "Constant"},
+// }}}
+
+// JSON:
+// (elzr/vim-json) {{{
+{"group": "jsonString", "link":  "String"},
+{"group": "jsonKeyword", "link": "Identifier"},
+{"group": "jsonKeywordMatch", "style": {"fg": "Gray"}},
+{"group": "jsonBraces", "style":       {"fg": "Gray"}},
+{"group": "jsonNoise", "style":        {"fg": "Gray"}},
+{"group": "jsonQuote", "style":        {"fg": "Gray"}},
+// (Quramy/vison}
+{"group": "jsonCommentError", "link": "SpecialComment"},
+{"group": "jsonEscape", "link": "Character"},
+{"group": "jsonFold", "style": {"fg": "Gray"}},
+// }}}
+
+// Lua:
+// (tbastos/vim-lua) {{{
+{"group": "luaFuncKeyword",    "link": "Constant"},
+{"group": "luaLocal",          "link": "Constant"},
+{"group": "luaFuncName",       "link": "Function"},
+{"group": "luaFuncCall",       "link": "Function"},
+{"group": "luaParen",          "link": "Identifier"},
+{"group": "luaFuncArg",        "link": "Identifier"},
+{"group": "luaFuncArgName",    "link": "Identifier"},
+{"group": "luaString",         "link": "String"},
+{"group": "luaStringSpecial",  "link": "Character"},
+{"group": "luaOperator",       "link": "Conditional"},
+{"group": "luaSymbolOperator", "link": "Conditional"},
+{"group": "luaFunc", "style":          {}},
+{"group": "luaComma", "style":         {}},
+{"group": "luaFuncParens", "style":    {}},
+{"group": "luaBraces", "style":        {"fg": "White"}},
+{"group": "luaTable", "style":         {}},
+{"group": "luaFuncSig", "style":       {}},
+// }}}
+
+// Man: {{{
+// {"group": "manTitle", "link": ""},
+// {"group": "manReference", "link": ""},
+// {"group": "manOptionDesc", "link": ""},
+{"group": "manSectionHeading", "link": "Magenta"},
+{"group": "manSubHeading", "link": "Magenta"},
+// }}}
+
+// Makefile: {{{
+{"group": "makeCommands", "link": "String"},
+{"group": "makeSpecial", "link": "Constant"},
+{"group": "makeComment", "link": "SpecialComment"},
+// {"group": "makeSpecTarget", "link": "Identifier"},
+// {"group": "makeTarget", "link": "Identifier"},
+// }}}
+
+// Markdown:
+// (tyru/markdown-codehl-onthefly.vim) {{{
+{"group": "markdownHighlightcs", "link": "PlainText"},
+// }}}
+
+// (tpope/vim-markdown) {{{
+{"group": "markdownH1", "style":               {"fg": "Magenta"}},
+{"group": "markdownH2", "link": "markdownH1"},
+{"group": "markdownH3", "link": "markdownH1"},
+{"group": "markdownH4", "link": "markdownH1"},
+{"group": "markdownH5", "link": "markdownH1"},
+{"group": "markdownH6", "link": "markdownH1"},
+{"group": "markdownRule", "link": "markdownH1"},
+{"group": "markdownHeadingDelimiter", "style": {"fg": "Magenta"}},
+{"group": "markdownItalic", "style":           {"fg": "LightBlue", "styling": "italic"}},
+{"group": "markdownItalicDelimiter", "style":  {"fg": "Gray"}},
+{"group": "markdownBold", "style":             {"fg": "Blue",   "styling": "bold"}},
+{"group": "markdownBoldDelimiter", "style":    {"fg": "Gray"}},
+{"group": "markdownListMarker", "style":       {"fg": "BrightBlue"}},
+{"group": "markdownCode", "link": "String"},
+{"group": "markdownLinkText", "link": "Identifier"},
+{"group": "markdownCodeDelimiter", "link": "Delimiter"},
+{"group": "markdownUrl", "link": "Delimiter"},
+{"group": "markdownLinkDelimiter", "link": "Delimiter"},
+{"group": "markdownLinkTextDelimiter", "link": "Delimiter"},
+// {"group": "markdownCodeDelimiter", "style":    {"fg": "Gray"}},
+// {"group": "markdownUrl", "style":              {"fg": "Gray"}},
+// {"group": "markdownLinkTextDelimiter", "style":{"fg": "Gray"}},
+// {"group": "markdownLinkDelimiter", "style":    {"fg": "Gray"}},
+{"group":  "markdownBlockquote", "style":      {"fg": "Green"}},
+// }}}
+
+// (plasticboy/vim-markdown) {{{
+{"group": "mkdItalic",           "style": {"gui": "italic"}},
+{"group": "mkdBold",             "style": {"gui": "bold"}},
+{"group": "mkdBoldItalic",       "style": {"gui": "bold,italic"}},
+{"group": "mkdFootnotes",        "style": {}},
+{"group": "mkdFootnote",         "style": {}},
+{"group": "mkdID",               "style": {}},
+{"group": "mkdURL",              "style": {"fg": "Orange"}},
+{"group": "mkdLink",             "style": {"fg": "LightBlue",}},
+{"group": "mkdInlineURL",        "style": {"fg": "Orange"}},
+{"group": "mkdLinkDefTarget",    "style": {"fg": "LightBlue",}},
+{"group": "mkdLinkDef",          "style": {"fg": "LightBlue",}},
+{"group": "mkdLinkTitle",        "style": {"fg": "LightBlue",}},
+{"group": "mkdLineBreak",        "style": {}},
+{"group": "mkdBlockquote",       "style": {"fg": "Green"}},
+{"group": "mkdCode",             "style": {"fg": "Orange"}},
+{"group": "mkdListItem",         "style": {"fg": "BrightBlue",}},
+{"group": "mkdListItemLine",     "style": {}},
+{"group": "mkdNonListItemBlock", "style": {}},
+{"group": "mkdRule",             "style": {"fg": "Magenta"}},
+{"group": "mkdDelimiter",        "style": {"fg": "Gray"}},
+// }}}
+
+// Perl: {{{
+{"group": "perlSpecialString", "link": "Escape"},
+{"group": "perlVarMember", "link": "Type"},
+//}}}
+
+//PowerShell: {{{
+// (rbtnn/powershell.vim}
+{"group": "powershellOperatorStart", "link": "Conditional"},
+{"group": "powershellEscape", "link": "Character"},
+{"group": "powershellKeyword", "link": "Constant"},
+{"group": "powershellCmdlet", "link": "Type"},
+// (PProvost/vim-ps1}
+{"group": "ps1Keyword", "link": "Constant"},
+{"group": "ps1InterpolationDelimiter", "link": "Constant"},
+{"group": "ps1Operator", "link": "Conditional"},
+{"group": "ps1Flag", "link": "Conditional"},
+{"group": "ps1Interpolation", "link": "Identifier"},
+// }}}
+
+// Python: {{{
+{"group": "pythonRun",          "style": {"fg": "Blue"}},
+{"group": "pythonCoding",       "style": {"fg": "Blue"}},
+{"group": "pythonBuiltinFunc",  "style": {"fg": "Blue"}},
+{"group": "pythonClassVar",     "style": {"fg": "Blue", "styling": "italic"}},
+{"group": "pythonAttribute",    "style": {"fg": "Blue"}},
+{"group": "pythonDot", "link": "Identifier"},
+{"group": "pythonFunction", "link": "Function"},
+{"group": "pythonClassName", "link": "Type"},
+{"group": "pythonBuiltin", "link": "Type"},
+{"group": "pythonBuiltinObj", "link": "Type"},
+{"group": "pythonInclude", "link": "Control"},
+{"group": "pythonOperator", "link": "Control"},
+{"group": "pythonStatement", "link": "Control"},
+{"group": "pythonNumber", "link": "Number"},
+{"group": "pythonString", "link": "String"},
+{"group": "pythonRawString", "link": "String"},
+{"group": "pythonFString", "link": "String"},
+{"group": "pythonStrFormat", "link": "Identifier"},
+{"group": "pythonStrInterpRegion", "link": "Identifier"},
+{"group": "pythonStrTemplate", "link": "Identifier"},
+{"group": "pythonStrFormatting", "link": "Character"},
+{"group": "pythonEscape", "link": "Character"},
+{"group": "pythonRawEscape", "link": "Character"},
+{"group": "pythonUniEscape", "link": "Character"},
+{"group": "pythonBytesEscape", "link": "Character"},
+{"group": "pythonTrippleQuotes", "link": "SpecialComment"},
+{"group": "pythonDocString", "link": "SpecialComment"},
+{"group": "pythonCommentTitle", "link": "SpecialComment"},
+{"group": "pythonComment", "link": "Comment"},
+// (tweekmonster/impsort.vim}
+{"group": "pythonImport",          "style": {"fg": "Magenta"}},
+{"group": "pythonIncludeLine",     "style": {"fg": "Cyan"}},
+{"group": "pythonImportedModule",  "style": {"fg": "LightBlue"}},
+{"group": "pythonImportedObject",  "style": {"fg": "Cyan"}},
+{"group": "pythonImportedFuncDef", "style": {"fg": "Yellow"}},
+{"group": "impsortNonImport",      "style": {"fg": "LightBlue"}},
+// }}}
+
+// Ruby: {{{
+{"group": "rubyInterpolation", "link": "Identifier"},
+{"group": "rubyLocalVariableOrMethod", "link": "Identifier"},
+{"group": "rubyInterpolationDelimiter", "link": "Constant"},
+{"group": "rubyOperator", "link": "Conditional"},
+{"group": "rubyControl", "link": "Conditional"},
+{"group": "rubyBlockParameterList", "link": "htmlTag"},
+{"group": "rubyBlockParameter", "link": "Identifier"},
+{"group": "rubySymbol", "link": "Identifier"},
+{"group": "rubyClassNameTag", "link": "Type"},
+{"group": "rubyString", "link": "String"},
+{"group": "rubyStringDelimiter", "link": "String"},
+// }}}
+
+// Rust: {{{
+{"group": "rustSelf", "style": {"fg": "Blue", "styling": "italic"}},
+{"group": "rustEscape", "link": "Character"},
+{"group": "rustPunctuation", "link": "Comment"},
+{"group": "rustDot", "link": "Conditional"},
+{"group": "rustControlKeyword", "link": "Conditional"},
+
+{"group": "rustMacro", "link": "Function"},
+{"group": "rustModPath", "link": "Type"},
+{"group": "rustOperator", "link": "Conditional"},
+{"group": "rustSigil", "link": "Constant"},
+{"group": "rustPlaceholder", "link": "Constant"},
+{"group": "rustModPathSep", "link": "Magenta"},
+// }}}
+
+// SQL: {{{
+{"group": "sqlComment", "link": "SpecialComment"},
+{"group": "sqlString", "link": "String"},
+{"group": "sqlStatement", "link": "Constant"},
+{"group": "sqlKeyword", "link": "Conditional"},
+{"group": "sqlSpecial", "link": "Type"},
+// }}}
+
+// Sh: {{{
+{"group": "shQuote", "link": "String"},
+{"group": "shDoubleQuote", "link": "String"},
+{"group": "shSpecial", "link": "Character"},
+{"group": "shEscape", "link": "Character"},
+{"group": "shFunction", "link": "Function"},
+{"group": "shFunctionTwo", "link": "Function"},
+{"group": "shSet", "link": "Constant"},
+{"group": "shRedir", "link": "Control"},
+{"group": "shOperator", "link": "Control"},
+{"group": "shTestOpr", "link": "Control"},
+{"group": "shVarAssign", "link": "Control"},
+{"group": "shCommandSub", "link": "Type"},
+{"group": "shCmdSubRegion", "link": "Statement"},
+{"group": "shStatement", "link": "Keyword"},
+{"group": "shDerefVar", "link": "Identifier"},
+{"group": "shDerefSpecial", "link": "Identifier"},
+{"group": "shDerefSimple", "link": "Identifier"},
+{"group": "shDerefVarArray", "link": "Identifier"},
+{"group": "shRepeat", "link": "Identifier"},
+{"group": "shFor", "link": "Identifier"},
+{"group": "shFunctionStatement", "link": "Conditional"},
+{"group": "shFunctionKey", "link": "Conditional"},
+{"group": "shConditional", "link": "Conditional"},
+{"group": "shOption", "link": "Conditional"},
+{"group": "shIf", "link": "Conditional"},
+{"group": "shDo", "link": "Conditional"},
+{"group": "shLoop", "link": "Conditional"},
+{"group": "shDblBrace", "link": "Conditional"},
+{"group": "shTestOpr", "link": "Conditional"},
+{"group": "shDerefPattern", "style": {"fg": "LightRed"}},
+{"group": "shDerefOp",      "style": {"fg": "LightRed"}},
+{"group": "shCtrlSeq",      "style": {"fg": "Cyan"}},
+{"group": "shFunctionOne",    "style": {"fg": "White"}},
+{"group": "shDeref",          "style": {"fg": "White"}},
+{"group": "shExpr",           "style": {"fg": "White"}},
+{"group": "shSubSh",          "style": {}},
+{"group": "shSubRegion",      "style": {}},
+{"group": "shCmdParenRegion", "style": {}},
+// }}}
+
+// BASH: {{{
+{"group": "bashBuiltinCommands", "link": "Constant"},
+// }}}
+
+// ZSH: {{{
+{"group": "zshFunction", "link": "Function"},
+{"group": "zshDeref", "link": "Boolean"},
+{"group": "zshVariableDef", "link": "Identifier"},
+{"group": "zshSubst", "link": "Identifier"},
+{"group": "zshOption", "link": "Identifier"},
+{"group": "zshSubstDelim", "link": "Boolean"},
+{"group": "zshOperator", "link": "Control"},
+{"group": "zshQuoted", "link": "Escape"},
+{"group": "zshPrecommand",  "style": {"fg": "Yellow", "styling": "italic"}},
+{"group": "zshParentheses", "style": {"fg": "White"}},
+// }}}
+
+// Todo:
+// (todo.txt) {{{
+{"group": "todoItem",        "style": {"fg": "White"}},
+{"group": "todoID",          "style": {"fg": "Gray"}},
+{"group": "todoDone",        "style": {"fg": "LightGray"}},
+{"group": "todoDate",        "style": {"fg": "LightGray"}},
+{"group": "todoOverDueDate", "style": {"fg": "LightRed"}},
+{"group": "todoProject",     "style": {"fg": "Cyan"}},
+{"group": "todoContext",     "style": {"fg": "LightBlue"}},
+{"group": "todoExtra",       "style": {"fg": "LightGreen"}},
+{"group": "todoString",      "style": {"fg": "Cyan"}},
+{"group": "todoPriorityA",   "style": {"fg": "Red"}},
+{"group": "todoPriorityB",   "style": {"fg": "LightRed"}},
+{"group": "todoPriorityC",   "style": {"fg": "Orange"}},
+{"group": "todoPriorityD",   "style": {"fg": "YellowOrange"}},
+{"group": "todoPriorityE",   "style": {"fg": "Yellow"}},
+{"group": "todoPriorityF",   "style": {"fg": "LightGreen"}},
+{"group": "todoComment",     "style": {"fg": "Gray", "styling": "italic"}},
+// }}}
+
+// TSV:
+// (chrisbra/csv.vim) {{{
+{"group": "CSVComment", "link": "Comment"},
+{"group": "CSVColumnEven",       "style": {"fg": "Blue"}},
+{"group": "CSVColumnOdd",        "style": {"fg": "Green"}},
+{"group": "CSVColumnHeaderEven", "style": {"fg": "Black", "bg": "Blue"}},
+{"group": "CSVColumnHeaderOdd",  "style": {"fg": "Black", "bg": "Green"}},
+// }}}
+
+// VimL: {{{
+{"group": "vimCtrlChar", "link": "YellowOrange"},
+{"group": "vimEcho", "link": "Function"},
+{"group": "vimNamespace", "link": "Type"},
+{"group": "vimCVar", "link": "Type"},
+{"group": "vimVarNamespace", "link": "Type"},
+{"group": "vimVar", "link": "Identifier"},
+{"group": "vimEnvVar",  "style": {"fg": "LightBlue", "styling": "italic"}},
+{"group": "vimBuiltin", "link": "Type"},
+{"group": "vimFunc", "link": "Function"},
+{"group": "vimUserFunc", "link": "Function"},
+{"group": "vimUserCmd", "link": "Function"},
+{"group": "vimDocBlock", "link": "SpecialComment"},
+// {"group": "vimUserCmd",      "style": {"fg": "Yellow"}},
+// {"group": "vimUserAttrb",    "style": {"fg": "Yellow"}},
+// {"group": "vimUserAttrbKey", "style": {"fg": "Yellow"}},
+{"group": "vimFunction", "link": "Function"},
+{"group": "vimFunctionError", "style": {"fg": "Red"}},
+{"group": "vimContinue",      "style": {"fg": "Gray"}},
+{"group": "vimLineComment",   "style": {"fg": "Gray", "styling": "italic"}},
+{"group": "vimCommentTitle", "link": "SpecialComment"},
+{"group": "vimBracket",       "style": {"fg": "LightGray"}},
+{"group": "vimNotFunc", "link": "Conditional"},
+{"group": "vimCommand", "link": "Conditional"},
+{"group": "vimCmdSep", "link": "Conditional"},
+{"group": "vimOper", "link": "Magenta"},
+{"group": "vimMap", "link": "Conditional"},
+{"group": "vimFtCmd", "link": "Conditional"},
+{"group": "vimParenSep",       "style": {"fg": "White"}},
+{"group": "vimSetSep",         "style": {"fg": "White"}},
+{"group": "vimSep",            "style": {"fg": "White"}},
+{"group": "vimOperParen",      "style": {"fg": "LightBlue"}},
+{"group": "vimOption",         "style": {"fg": "LightBlue"}},
+{"group": "vimSet",            "style": {"fg": "LightBlue"}},
+{"group": "vimMapLhs",         "style": {"fg": "LightBlue"}},
+{"group": "vimIsCommand",      "style": {"fg": "LightBlue"}},
+{"group": "vimHiAttrib",       "style": {"fg": "LightBlue"}},
+{"group": "vimMapMod",         "style": {"fg": "LightGray"}},
+{"group": "vimLet",            "style": {"fg": "Blue"}},
+{"group": "vimMapModKey",      "style": {"fg": "Blue"}},
+{"group": "vimHighlight",      "style": {"fg": "Blue"}},
+{"group": "vimMapRhs", "link": "Type"},
+{"group": "vimFtOption", "link": "Type"},
+{"group": "vimNotation", "link": "Character"},
+{"group": "vimHLGroup", "link": "Character"},
+{"group": "vimHiLink", "link": "Character"},
+{"group": "vimEchoHL", "link": "Type"},
+{"group": "vimAutoCmd",        "style": {}},
+{"group": "vimAutoEvent",      "style": {}},
+{"group": "vimAutoCmdSfxList", "style": {}},
+// " Vim Syntax RegEx:
+// {"group": "vimSynRegPat", "link": "RegEx"},
+// {"group": "vimPatSep", "link": "Conditional"},
+{"group": "vimPatSepR",        "style": {"fg": "YellowOrange",}},
+{"group": "vimSynPatRange",    "style": {"fg": "LightBlue"}},
+{"group": "vimSynPatMod",      "style": {"fg": "LightBlue"}},
+{"group": "vimSynNotPatRange", "style": {"fg": "Blue"}},
+{"group": "vimSynMatchRegion", "style": {"fg": "LightRed"}},
+// {"group": "vimSynPatRegion", "style": {}},
+// {"group": "vimPatRegion",    "style": {"fg": Yellow}},
+// {"group": "vimCollection",   "style": {"fg": Blue}},
+// Vim Syntax Group
+{"group": "vimGroupList",      "style": {"fg": "LightBlue"}},
+{"group": "vimGroup",          "style": {"fg": "YellowOrange",}},
+{"group": "vimHiGroup",        "style": {"fg": "Cyan"}},
+{"group": "vimGroupName",      "style": {"fg": "LightBlue"}},
+{"group": "vimGroupAdd",       "style": {"fg": "Magenta"}},
+{"group": "vimSynNextGroup",   "style": {"fg": "Magenta"}},
+// " Vim Syntax:
+{"group": "vimSynType",      "link": "Type"},
+{"group": "vimSynCase",      "link": "Constant"},
+{"group": "vimSyncLinecont", "link": "Constant"},
+{"group": "vimSyncMatch",    "link": "Constant"},
+{"group": "vimSynRegOpt",    "link": "Constant"},
+{"group": "vimSyntax",       "link": "Conditional"},
+{"group": "vimSynKeyOpt",    "link": "Conditional"},
+{"group": "vimSynContains",  "link": "Conditional"},
+{"group": "vimSynReg",       "link": "Conditional"},
+{"group": "vimSynMtchOpt",   "link": "Conditional"},
+{"group": "vimSynMtchGrp",   "link": "Conditional"},
+// {"group": "vimSynRegion",    "link": "nop"},
+// {"group": "vimSynKeyRegion", "link": "nop"},
+{"group": "nvimMap",         "style": {"fg": "Violet"}},
+{"group": "nvimMapBang",     "style": {"fg": "Violet"}},
+{"group": "nvimUnmap",       "style": {"fg": "Violet"}},
+{"group": "nvimHLGroup",     "style": {"fg": "Violet"}},
+// {"group": "termcursor",      "style": {"fg": "Violet", "bg": "Green"}},
+// {"group": "termcursornc",    "style": {"fg": "Violet", "bg": "BrightBlue"}},
+// {"group": "quickfixline",    "style": {"fg": "Violet", "bg": "Violet"}},
+// }}}
+
+// YAML: {{{
+{"group": "yamlPlainScalar", "link": "String"},
+{"group": "yamlBlockMappingKey", "link": "Identifier"},
+{"group": "yamlFlowString", "link": "String"},
+{"group": "yamlFlowStringDelimiter", "link": "String"},
+{"group": "yamlEscape", "link": "Character"},
+{"group": "yamlDocumentStart",     "style": {"fg": "Magenta"}},
+{"group": "yamlDocumentEnd",       "style": {"fg": "Magenta"}},
+{"group": "yamlKeyValueDelimiter", "style": {"fg": "Magenta"}},
+// }}}
+
+// ==============================================================================
+//  === Plugin Filetypes ===
+// ==============================================================================
+
+// (SirVer/ultisnips) {{{
+{"group": "snipSnippetBody", "link": "String"},
+{"group": "snipSnippetDocString", "link": "PlainText"},
+{"group": "snipSnippetTrigger", "link": "Conditional"},
+{"group": "snipEscape", "link": "Character"},
+{"group": "snipSnippetHeader", "link": "Comment"},
+{"group": "snipSnippetFooter", "link": "Comment"},
+{"group": "snipSnippetFooterKeyword", "link": "Comment"},
+{"group": "snipSnippetHeaderKeyword", "link": "Comment"},
+{"group": "snipTabStop",              "style": {"fg": "Blue"}},
+{"group": "snipTabStopDefault",       "style": {"fg": "LightBlue"}},
+{"group": "snipVisual",               "style": {"fg": "DarkBlue"}},
+{"group": "snipCommand",              "style": {"fg": "Cyan"}},
+{"group": "snipVimlCommand",          "style": {"fg": "Cyan"}},
+{"group": "snipVimlCommandV",         "style": {"fg": "Cyan"}},
+{"group": "snipPythonCommand",        "style": {"fg": "Cyan"}},
+{"group": "snipPythonCommandP",       "style": {"fg": "Cyan"}},
+{"group": "snipSnippetOptions",       "style": {}},
+{"group": "snipGlobal",               "style": {"fg": "Magenta"}},
+{"group": "snipGlobalPHeader",        "style": {"fg": "Cyan"}},
+{"group": "snipGlobalHeaderKeyword",  "style": {"fg": "Magenta"}},
+{"group": "snipSnippetOptionFlag",    "style": {"fg": "Magenta"}},
+{"group": "snipLeadingSpaces", "link": "nop"},
+// }}}
+
+// (Shougo/neosnippet) {{{
+// {"group": "neosnippetName",             "style": {"fg": "Cyan"}},
+// {"group": "neosnippetAbbr",             "style": {"fg": "Orange"}},
+// {"group": "neosnippetOption",           "style": {"fg": "Blue"}},
+// {"group": "neosnippetWord",             "style": {"fg": "White"}},
+// {"group": "neosnippetPlaceHolder",      "style": {"fg": "LightBlue"}},
+// {"group": "neosnippetKeyword",          "style": {"fg": "Magenta"}},
+// {"group": "neosnippetStatementAbbr",    "style": {"fg": "Magenta"}},
+// {"group": "neosnippetStatementName",    "style": {"fg": "Magenta"}},
+// {"group": "neosnippetStatementOptions", "style": {"fg": "Magenta"}},
+// }}}
+
+// Tmux: {{{
+{"group": "tmuxComment",         "link": "Comment"},
+{"group": "tmuxString",          "link": "String"},
+{"group": "tmuxStringDelimiter", "link": "String"},
+{"group": "tmuxOptions",             "style": {"fg": "Magenta"}},
+{"group": "tmuxFmtConditional",      "style": {"fg": "Magenta"}},
+{"group": "tmuxOptsSet",             "style": {"fg": "YellowOrange"}},
+{"group": "tmuxOptsSetw",            "style": {"fg": "YellowOrange"}},
+{"group": "tmuxWindowPaneCmds",      "style": {"fg": "Yellow"}},
+{"group": "tmuxAttrEquals",          "style": {"fg": "White"}},
+{"group": "tmuxShellInpol",          "style": {"fg": "White"}},
+{"group": "tmuxAttrSeparator",       "style": {"fg": "LightGray"}},
+{"group": "tmuxFmtInpol",            "style": {"fg": "LightGray"}},
+{"group": "tmuxSpecialCmds",         "style": {"fg": "Blue"}},
+{"group": "tmuxFmtInpolDelimiter",   "style": {"fg": "Blue"}},
+{"group": "tmuxAttrInpolDelimiter",  "style": {"fg": "Blue"}},
+{"group": "tmuxShellInpolDelimiter", "style": {"fg": "Blue"}},
+{"group": "tmuxURL",                 "style": {"fg": "LightBlue"}},
+{"group": "tmuxColor",               "style": {"fg": "LightBlue"}},
+{"group": "tmuxStyle",               "style": {"fg": "LightBlue"}},
+{"group": "tmuxVariable",            "style": {"fg": "LightBlue"}},
+{"group": "tmuxAttrBgFg",            "style": {"fg": "LightBlue"}},
+{"group": "tmuxFmtVariable",         "style": {"fg": "LightBlue"}},
+{"group": "tmuxKey",                 "style": {"fg": "Cyan"}},
+{"group": "tmuxFmtAlias",            "style": {"fg": "Cyan"}},
+{"group": "tmuxDateInpol",           "style": {"fg": "Cyan"}},
+{"group": "tmuxKeySymbol",           "style": {"fg": "Cyan"}},
+{"group": "tmuxOptionValue",         "style": {"fg": "Cyan"}},
+// }}}
+
+// (jceb/vim-orgmode) {{{
+// {"group": "hyperlink",             "style": {"fg": LightBlue}},
+// {"group": "org_title",             "style": {"fg": Cyan}},
+// {"group": "org_heading1",          "style": {"fg": Magenta}},
+// {"group": "org_heading2",          "style": {"fg": BrightBlue}},
+// {"group": "org_heading3",          "style": {"fg": Green}},
+// {"group": "org_heading4",          "style": {"fg": YellowOrange}},
+// {"group": "org_heading5",          "style": {"fg": LightRed}},
+// {"group": "org_shade_stars",       "style": {"fg": DarkGray}},
+// {"group": "org_list_item",         "style": {"fg": BrightBlue}},
+// {"group": "org_list_unordered",    "style": {"fg": BrightBlue}},
+// {"group": "org_list_ckeckbox",     "style": {"fg": BrightBlue}},
+// {"group": "org_todo_keyword_done", "style": {"fg": BrightBlue}},
+// }}}
+
+// ==============================================================================
+//  === Plugins ===
+// ==============================================================================
+
+// (w0rp/ale) {{{
+{"group": "ALEInfo",             "style": {}},
+{"group": "ALEError",            "style": {}},
+{"group": "ALEWarning",          "style": {}},
+{"group": "ALEStyleError",       "style": {}},
+{"group": "ALEStyleWarning",     "style": {}},
+{"group": "ALEInfoSign",         "style": {"fg": "LightGreen",   "bg": "DarkGray"}},
+{"group": "ALEErrorSign",        "style": {"fg": "LightRed",     "bg": "DarkGray"}},
+{"group": "ALEWarningSign",      "style": {"fg": "YellowOrange", "bg": "DarkGray"}},
+{"group": "ALEStyleErrorSign",   "style": {"fg": "Yellow",       "bg": "DarkGray"}},
+{"group": "ALEStyleWarningSign", "style": {"fg": "Yellow",       "bg": "DarkGray"}},
+{"group": "ALEInfoLine",         "style": {}},
+{"group": "ALEErrorLine",        "style": {}},
+{"group": "ALEWarningLine",      "style": {}},
+// }}}
+
+// (neomake/neomake) {{{
+{"group": "NeomakeErrorSign",    "link": "ALEErrorSign"},
+{"group": "NeomakeWarningSign",  "link": "ALEWarningSign"},
+{"group": "NeomakeMessagesSign", "link": "ALEInfoSign"},
+{"group": "NeomakeInfoSign",     "link": "ALEInfoSign"},
+// }}}
+
+// (MattesGroeger/vim-bookmarks) {{{
+{"group": "BookmarkSign",           "style": {"fg": "Cyan", "bg": "DarkGray"}},
+{"group": "BookmarkAnnotationSign", "style": {"fg": "Cyan", "bg": "DarkGray"}},
+{"group": "BookmarkLine",           "style": {}},
+{"group": "BookmarkAnnotationLine", "style": {}},
+// }}}
+
+// (ap/vim-buftabline) {{{
+{"group": "BufTabLineCurrent", "style": {"fg": "Black", "bg": "Green"}},
+{"group": "BufTabLineActive",  "style": {"fg": "Green", "bg": "DarkGray"}},
+{"group": "BufTabLineHidden",  "style": {"fg": "White", "bg": "DarkGray"}},
+{"group": "BufTabLineFill",    "style": {"bg": "DarkGray"}},
+// }}}
+
+// Cheat40: {{{
+// {"group": "Cheat40Descr",        "style": {}},
+// {"group": "Cheat40Command",      "style": {"fg": LightBlue}},
+// {"group": "Cheat40Header",       "style": {"fg": BrightBlue}},
+// {"group": "Cheat40Divider",      "style": {"fg": BrightBlue}},
+// {"group": "Cheat40About",        "style": {}},
+// {"group": "Cheat40FirstLine",    "style": {"fg": Magenta}},
+// {"group": "Cheat40BeginSection", "style": {}},
+// {"group": "Cheat40EndSection",   "style": {}},
+// {"group": "Cheat40Tag",          "style": {"fg": Green}},
+// {"group": "Cheat40Backtick",     "style": {"fg": Green}},
+// {"group": "Cheat40Mode",         "style": {"fg": Cyan}},
+// {"group": "Cheat40Angle",        "style": {"fg": Green}},
+// {"group": "Cheat40DblAngle",     "style": {"fg": YellowOrange}},
+// {"group": "Cheat40Comment",      "style": {"fg": BrightBlue,   "styling": "italic"}},
+// {"group": "Cheat40Hash",         "style": {"fg": White,        "styling": "none"}},
+// {"group": "Cheat40Runtime",      "style": {}},
+// }}}
+
+// (Shougo/denite.nvim) {{{
+{"group": "deniteMatchedChar", "style": {"fg": "Cyan", "styling": "underline"}},
+{"group": "denitePrompt",        "style": {"fg": "Cyan"}},
+{"group": "deniteConcealedMark", "style": {"fg": "DarkBlue"}},
+{"group": "deniteModeNormal",    "style": {"fg": "Green"}},
+{"group": "deniteModeInsert",    "style": {"fg": "Green"}},
+{"group": "deniteSource_Projectile_Name",  "style": {"fg": "Cyan"}},
+// }}}
+
+// (airblade/vim-gitgutter) {{{
+{"group": "GitGutterAdd",              "style": {"fg": "Green",        "bg": "DarkGray"}},
+{"group": "GitGutterChange",           "style": {"fg": "YellowOrange", "bg": "DarkGray"}},
+{"group": "GitGutterDelete",           "style": {"fg": "LightRed",     "bg": "DarkGray"}},
+{"group": "GitGutterChangeDelete",     "style": {"fg": "YellowOrange", "bg": "DarkGray"}},
+{"group": "GitGutterAddLine",          "style": {}},
+{"group": "GitGutterChangeLine",       "style": {}},
+{"group": "GitGutterDeleteLine",       "style": {}},
+{"group": "GitGutterChangeDeleteLine", "style": {}},
+// }}}
+
+// (junegunn/vim-github-dashboard) {{{
+{"group": "githubNumber",  "style": {"fg": "LightGreen"}},
+{"group": "githubTime",    "style": {"fg": "LightGray"}},
+{"group": "githubUser",    "style": {"fg": "Blue"}},
+{"group": "githubBranch",  "style": {"fg": "Magenta"}},
+{"group": "githubRepo",    "style": {"fg": "Orange"}},
+{"group": "githubSHA",     "style": {"fg": "LightGreen"}},
+{"group": "githubKeyword", "style": {"fg": "Cyan"}},
+{"group": "githubCommit",  "style": {"fg": "Cyan"}},
+{"group": "githubRelease", "style": {"fg": "Cyan"}},
+{"group": "githubTag",     "style": {"fg": "Cyan"}},
+{"group": "githubEdit",    "style": {"fg": "Cyan"}},
+{"group": "githubGist",    "style": {"fg": "Cyan"}},
+// }}}
+
+// (hecal3/vim-leader-guide) {{{
+// {"group": "LeaderGuideKeys",     "style": {"fg": "Cyan"}},
+// {"group": "LeaderGuideBrackets", "style": {"fg": "Gray"}},
+// {"group": "LeaderGuideDesc",     "style": {"fg": "Blue"}},
+// }}}
+
+// (justinmk/vim-sneak) {{{
+// {"group": Sneak",      "style": {"fg": nop, "bg": "Gray"}},
+// {"group": SneakScope", "style": {"fg": nop, "bg": "Gray"}},
+// {"group": SneakLabel", "style": {"fg": nop, "bg": "Cyan"}},
+// }}}
+
+// (mhinz/vim-startify) {{{
+{"group": "StartifyFile",    "style": {"fg": "Cyan"}},
+{"group": "StartifyBracket", "style": {"fg": "Black"}},
+{"group": "StartifyNumber",  "style": {"fg": "LightGreen",}},
+{"group": "StartifyVar",     "style": {"fg": "LightGreen",}},
+{"group": "StartifySpecial", "style": {"fg": "LightGreen",}},
+{"group": "StartifySlash",   "style": {"fg": "Gray"}},
+{"group": "StartifyPath",    "style": {"fg": "Gray"}},
+{"group": "StartifySelect",  "style": {"fg": "Blue"}},
+{"group": "StartifyHeader",  "style": {"fg": "Blue"}},
+{"group": "StartifySection", "style": {"fg": "Magenta"}},
+// }}}
+
+// (majutsushi/tagbar) {{{
+{"group": "TagbarHelp",       "style": {"fg": "Gray"}},
+{"group": "TagbarHelpKey",    "style": {"fg": "LightGray"}},
+{"group": "TagbarHelpTitle",  "style": {"fg": "Violet"}},
+{"group": "TagbarKind",       "style": {"fg": "Cyan"}},
+{"group": "TagbarNestedKind", "style": {"fg": "LightGreen"}},
+{"group": "TagbarScope",      "style": {"fg": "Yellow"}},
+{"group": "TagbarType",       "style": {"fg": "Cyan"}},
+// {"group": "TagbarParens",     "style": {"fg": "Cyan"}},
+{"group": "TagbarParens",     "link": "PlainText"},
+{"group": "TagbarSignature",  "style": {"fg": "LightBlue"}},
+{"group": "TagbarPseudoID",   "style": {"fg": "Magenta"}},
+// {"group": "TagbarFoldIcon",   "style": {"fg": "White"}},
+{"group": "TagbarFunc",       "style": {"fg": "Yellow"}},
+{"group": "TagbarSection",    "style": {"fg": "Magenta", "styling": "bold"}},
+// }}}
+
+// (Shougo/unite.vim) {{{
+{"group": "uniteStatusNormal",            "style":  {"fg": "Green"}},
+{"group": "uniteStatusInsert",            "style":  {"fg": "Blue"}},
+// {"group": "uniteStatusSourceNames",     "style":  {"fg": "Cyan"}},
+// {"group": "uniteStatusMessage",         "style":  {"fg": "Green"}},
+// {"group": "uniteStatusSourceCandidates","style":  {"fg": "Yellow"}},
+// {"group": "uniteStatusHead",            "style":  {"fg": "YellowOrange"}},
+{"group": "unitePrompt",                  "style":  {"fg": "Cyan"}},
+// {"group": "uniteStatusLineNR",          "style":  {"fg": "Gray"}},
+// }}}
+
+// (romgrk/vimfiler-prompt) {{{
+{"group": "FilerCursor",              "style": {"fg": "Gray"}},
+{"group": "FilerSelected",            "style": {"fg": "Gray"}},
+{"group": "FilerActive",              "style": {"fg": "Gray"}},
+{"group": "FilerMatch",               "style": {}},
+{"group": "FilerNoMatch",             "style": {}},
+{"group": "FilerPrompt",              "style": {"fg": "Cyan"}},
+{"group": "FilerInput",               "style": {"fg": "Gray"}},
+{"group": "FilerCompletion",          "style": {"fg": "Gray"}},
+// " (Shougo/vimfiler}
+{"group": "vimfilerStatus",           "style": {}},
+{"group": "vimfilerColumn__devicons", "style": {"fg": "LightGray"}},
+{"group": "vimfilerDirectory",        "style": {"fg": "Blue"}},
+{"group": "vimfilerCurrentDirectory", "style": {"fg": "Cyan",     "styling":  "italic"}},
+{"group": "vimfilerMask",             "style": {"fg": "Blue"}},
+{"group": "vimfilerMark",             "style": {"fg": "Green"}},
+{"group": "vimfilerNonMark",          "style": {"fg": "White"}},
+{"group": "vimfilerLeaf",             "style": {"fg": "Blue"}},
+{"group": "vimfilerNormalFile",       "style": {"fg": "White"}},
+{"group": "vimfilerOpenedFile",       "style": {"fg": "LightBlue"}},
+{"group": "vimfilerClosedFile",       "style": {"fg": "Blue"}},
+{"group": "vimfilerMarkedFile",       "style": {"fg": "Green"}},
+{"group": "vimfilerROFile",           "style": {"fg": "LightGray"}},
+// }}}
+
+]

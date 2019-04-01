@@ -23,8 +23,8 @@
   // UI Color
   // ===========================================================================
 
-  {"group": "Normal",         "style": {"fg": "White",      "bg": "DarkGray"  }},
-  {"group": "NormalNC",       "style": {                    "bg": "DarkGray"  }},
+  {"group": "Normal",         "style": {"fg": "White",      "bg": "Black"     }},
+  {"group": "NormalNC",       "style": {                    "bg": "Black"     }},
   {"group": "ColorColumn",    "style": {                    "bg": "DarkGray"  }},
   {"group": "iCursor",        "style": {                    "bg": "Blue"      }},
   {"group": "vCursor",        "style": {                    "bg": "Magenta"   }},

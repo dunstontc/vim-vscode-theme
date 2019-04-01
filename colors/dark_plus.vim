@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-03-29
+" Last Modified: 2019-04-01
 " ==============================================================================
 
 " Setup: {{{
@@ -23,12 +23,34 @@ endif
 if ! exists('g:dark_plus_terminal_italics')
   let g:dark_plus_terminal_italics = 1
 endif
+" }}}
+
+" Terminal Colors:  {{{
+let g:terminal_color_0  = '#1e1e1e'  " black
+let g:terminal_color_1  = '#f44747'  " red
+let g:terminal_color_2  = '#608b4e'  " green
+let g:terminal_color_3  = '#d7ba7d'  " yellow
+let g:terminal_color_4  = '#569cd6'  " blue
+let g:terminal_color_5  = '#c586c0'  " magenta
+let g:terminal_color_6  = '#4ec9b0'  " cyan
+let g:terminal_color_7  = '#d4d4d4'  " white
+let g:terminal_color_8  = '#1e1e1e'  " bright_black
+let g:terminal_color_9  = '#f44747'  " bright_red
+let g:terminal_color_10 = '#608b4e'  " bright_green
+let g:terminal_color_11 = '#d7ba7d'  " bright_yellow
+let g:terminal_color_12 = '#569cd6'  " bright_blue
+let g:terminal_color_13 = '#c586c0'  " bright_magenta
+let g:terminal_color_14 = '#4ec9b0'  " bright_cyan
+let g:terminal_color_15 = '#d4d4d4'  " bright_white
+let g:terminal_color_background = g:terminal_color_0
+let g:terminal_color_foreground = g:terminal_color_7
+" }}}
 
 highlight Comment ctermfg=0 guifg=#505050 cterm=italic gui=italic
 highlight DocString ctermfg=2 guifg=#608b4e cterm=italic gui=italic
 highlight SpecialComment ctermfg=2 guifg=#608b4e cterm=italic gui=italic
-highlight PlainText ctermfg=7 guifg=#d4d4d4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-highlight Control ctermfg=13 guifg=#c586c0 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight PlainText ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight Control ctermfg=13 guifg=#c586c0 ctermbg=NONE guibg=#1e1e1e cterm=NONE gui=NONE
 highlight Escape ctermfg=3 guifg=#d7ba7d cterm=italic gui=italic
 highlight Function ctermfg=3 guifg=#dcdcaa cterm=NONE gui=NONE
 highlight Number ctermfg=9 guifg=#b5cea8 cterm=NONE gui=NONE
@@ -39,8 +61,8 @@ highlight Storage ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight Language ctermfg=4 guifg=#569cd6 cterm=italic gui=italic
 highlight Type ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
 highlight Var ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
-highlight Normal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight NormalNC ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight Normal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight NormalNC ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight ColorColumn ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
 highlight iCursor ctermbg=4 guibg=#569cd6 cterm=NONE gui=NONE
 highlight vCursor ctermbg=13 guibg=#c586c0 cterm=NONE gui=NONE

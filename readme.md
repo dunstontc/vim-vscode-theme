@@ -1,5 +1,5 @@
 # dark-plus-vim
-[![Code Climate](https://img.shields.io/codeclimate/issues/github/me-and/mdf.svg)](https://github.com/dunstontc/vim-vscode-theme/issues)
+![GitHub issues](https://img.shields.io/github/issues/dunstontc/vim-vscode-theme.svg)
 [![License](https://img.shields.io/github/license/dunstontc/vim-vscode-theme.svg)](https://github.com/dunstontc/vim-vscode-theme/blob/master/LICENSE)
 
 <div align="center">

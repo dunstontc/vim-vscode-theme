@@ -45,12 +45,29 @@ let g:terminal_color_15 = '#d4d4d4'  " bright_white
 let g:terminal_color_background = g:terminal_color_0
 let g:terminal_color_foreground = g:terminal_color_7
 " }}}
-
+highlight White ctermfg=7 guifg=#d4d4d4 cterm=NONE gui=NONE
+highlight DarkGray ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
+highlight Gray ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
+highlight Red ctermfg=1 guifg=#f44747 cterm=NONE gui=NONE
+highlight LightRed ctermfg=1 guifg=#d16969 cterm=NONE gui=NONE
+highlight Orange ctermfg=3 guifg=#ce9178 cterm=NONE gui=NONE
+highlight YellowOrange ctermfg=3 guifg=#d7ba7d cterm=NONE gui=NONE
+highlight Yellow ctermfg=3 guifg=#dcdcaa cterm=NONE gui=NONE
+highlight Green ctermfg=2 guifg=#608b4e cterm=NONE gui=NONE
+highlight Blue ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
+highlight LightGreen ctermfg=9 guifg=#b5cea8 cterm=NONE gui=NONE
+highlight Cyan ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
+highlight Blue ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
+highlight DarkBlue ctermfg=4 guifg=#264f78 cterm=NONE gui=NONE
+highlight LightBlue ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
+highlight BrightBlue ctermfg=4 guifg=#007acc cterm=NONE gui=NONE
+highlight Magenta ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
+highlight Violet ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
 highlight Comment ctermfg=0 guifg=#505050 cterm=italic gui=italic
 highlight DocString ctermfg=2 guifg=#608b4e cterm=italic gui=italic
 highlight SpecialComment ctermfg=2 guifg=#608b4e cterm=italic gui=italic
-highlight PlainText ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
-highlight Control ctermfg=13 guifg=#c586c0 ctermbg=NONE guibg=#1e1e1e cterm=NONE gui=NONE
+highlight PlainText ctermfg=7 guifg=#d4d4d4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight Control ctermfg=13 guifg=#c586c0 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight Escape ctermfg=3 guifg=#d7ba7d cterm=italic gui=italic
 highlight Function ctermfg=3 guifg=#dcdcaa cterm=NONE gui=NONE
 highlight Number ctermfg=9 guifg=#b5cea8 cterm=NONE gui=NONE

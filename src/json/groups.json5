@@ -1,4 +1,28 @@
 [
+
+  // ===========================================================================
+  // Colors (for loose links)
+  // ===========================================================================
+
+  {"group": "White",        "style": {"fg": "White"        }},
+  {"group": "DarkGray",     "style": {"fg": "Gray"         }},
+  {"group": "Gray",         "style": {"fg": "Gray"         }},
+  {"group": "Red",          "style": {"fg": "Red"          }},
+  {"group": "LightRed",     "style": {"fg": "LightRed"     }},
+  {"group": "Orange",       "style": {"fg": "Orange"       }},
+  {"group": "YellowOrange", "style": {"fg": "YellowOrange" }},
+  {"group": "Yellow",       "style": {"fg": "Yellow"       }},
+  {"group": "Green",        "style": {"fg": "Green"        }},
+  {"group": "Blue",         "style": {"fg": "Blue"         }},
+  {"group": "LightGreen",   "style": {"fg": "LightGreen"   }},
+  {"group": "Cyan",         "style": {"fg": "Cyan"         }},
+  {"group": "Blue",         "style": {"fg": "Blue"         }},
+  {"group": "DarkBlue",     "style": {"fg": "DarkBlue"     }},
+  {"group": "LightBlue",    "style": {"fg": "LightBlue"    }},
+  {"group": "BrightBlue",   "style": {"fg": "BrightBlue"   }},
+  {"group": "Magenta",      "style": {"fg": "Magenta"      }},
+  {"group": "Violet",       "style": {"fg": "Violet"       }},
+
   // ===========================================================================
   // My Scopes
   // ===========================================================================

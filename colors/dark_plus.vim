@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-04-01
+" Last Modified: 2019-04-04
 " ==============================================================================
 
 " Setup: {{{
@@ -78,6 +78,7 @@ highlight Storage ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight Language ctermfg=4 guifg=#569cd6 cterm=italic gui=italic
 highlight Type ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
 highlight Var ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
+highlight Tags ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
 highlight Normal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight NormalNC ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight ColorColumn ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
@@ -317,6 +318,7 @@ highlight link javaScriptNumber Number
 highlight link javaScriptStringS String
 highlight link javaScriptSpecial Constant
 highlight link jsThis Language
+highlight link jsDot Conditional
 highlight link jsNoise Comment
 highlight link jsGlobalObjects Type
 highlight link jsGlobalNodeObjects Type
@@ -344,12 +346,15 @@ highlight link jsTemplateBraces StorageClass
 highlight link jsSwitchColon Operator
 highlight link jsReturn Conditional
 highlight link jsOperator Conditional
+highlight link jsSpreadOperator Constant
 highlight link jsExtendsKeyword Constant
 highlight link jsArrowFunction Constant
 highlight link jsArrowFuncArgs Identifier
+highlight link jsObjectColon PlainText
 highlight link jsxEscapeJs Escape
 highlight link jsxAttributeBraces Constant
-highlight link jsxTag Gray
+highlight link jsxTag Tags
+highlight link jsxEndTag Tags
 highlight link jsxTagName htmlTagName
 highlight link jsxAttrib Identifier
 highlight link jsxEqual PlainText
@@ -492,7 +497,7 @@ highlight link rubyOperator Conditional
 highlight link rubyControl Conditional
 highlight link rubyBlockParameterList htmlTag
 highlight link rubyBlockParameter Identifier
-highlight link rubySymbol Identifier
+highlight link rubySymbol Character
 highlight link rubyClassNameTag Type
 highlight link rubyString String
 highlight link rubyStringDelimiter String

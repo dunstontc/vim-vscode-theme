@@ -35,7 +35,7 @@
   {"group": "Escape",         "style": {"fg": "YellowOrange",                "styling": "italic"}}, // Escape Sequences like `\n` or `\\\\\\`; Also literal control characters like `^m`
   {"group": "Function",       "style": {"fg": "Yellow"}                                          }, // The Name of a function or method.
   {"group": "Number",         "style": {"fg": "LightGreen"}                                      }, // Any numeric value.
-  {"group": "Operator",       "style": {"fg": "Violet"}                                          }, // Operators can either be textual (e.g. `or` or be characters (e.g. `||`.
+  {"group": "Operator",       "style": {"fg": "Magenta"}                                         }, // Operators can either be textual (e.g. `or` or be characters (e.g. `||`.
   {"group": "RegEx",          "style": {"fg": "LightRed"}                                        }, // Regular Expressions.
   {"group": "String",         "style": {"fg": "Orange"}                                          }, // Strings.
   {"group": "Storage",        "style": {"fg": "Blue"}                                            }, // Assignment keywords like `let`, `var`, `new`, etc.
@@ -102,7 +102,7 @@
   {"group": "Tag",            "style": {"fg": "Green"                         }},
   {"group": "Ignore",         "style": {                                      }},
   {"group": "Conceal",        "style": {"fg": "White",      "bg": "Black"     }},
-  {"group": "Error",          "style": {"fg": "LightRed"                      }},
+  {"group": "Error",          "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "Todo",           "style": {"fg": "White",      "bg": "Green",        "styling": "bold,italic"}},
   {"group": "Underlined",     "style": {                                          "styling": "underline", }},
   {"group": "qfFileName",     "style": {                    "bg": "Blue"      }},
@@ -149,15 +149,20 @@
 //  Languages & Filetypes
 // ==============================================================================
 
+// AWK: {{{
+  {"group": "awkFieldVars", "link":  "Var"},
+  {"group": "awkOperator",  "link":  "Operator"},
+// }}}
+
 // C: {{{
   {"group": "cType",             "style": {"fg": "Cyan", "styling": "italic"}},
   {"group": "cConstant",         "link":  "Constant"},
   {"group": "cStatement",        "link":  "Conditional"},
   {"group": "cInclude",          "link":  "Constant"},
   {"group": "cIncluded",         "link":  "Identifier"},
-  {"group": "cSpecial",          "link": "Character"},
-  {"group": "cFormat",           "link": "Identifier"},
-  {"group": "cSpecialCharacter", "link": "Escape"},
+  {"group": "cSpecial",          "link":  "Character"},
+  {"group": "cFormat",           "link":  "Identifier"},
+  {"group": "cSpecialCharacter", "link":  "Escape"},
   // }}}
 
   // C# {{{

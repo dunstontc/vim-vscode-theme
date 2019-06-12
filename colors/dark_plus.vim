@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-04-04
+" Last Modified: 2019-06-12
 " ==============================================================================
 
 " Setup: {{{
@@ -62,7 +62,7 @@ highlight DarkBlue ctermfg=4 guifg=#264f78 cterm=NONE gui=NONE
 highlight LightBlue ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
 highlight BrightBlue ctermfg=4 guifg=#007acc cterm=NONE gui=NONE
 highlight Magenta ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
-highlight Violet ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
+highlight Violet ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight Comment ctermfg=0 guifg=#505050 cterm=italic gui=italic
 highlight DocString ctermfg=2 guifg=#608b4e cterm=italic gui=italic
 highlight SpecialComment ctermfg=2 guifg=#608b4e cterm=italic gui=italic
@@ -71,7 +71,7 @@ highlight Control ctermfg=13 guifg=#c586c0 ctermbg=NONE guibg=NONE cterm=NONE gu
 highlight Escape ctermfg=3 guifg=#d7ba7d cterm=italic gui=italic
 highlight Function ctermfg=3 guifg=#dcdcaa cterm=NONE gui=NONE
 highlight Number ctermfg=9 guifg=#b5cea8 cterm=NONE gui=NONE
-highlight Operator ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
+highlight Operator ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
 highlight RegEx ctermfg=1 guifg=#d16969 cterm=NONE gui=NONE
 highlight String ctermfg=3 guifg=#ce9178 cterm=NONE gui=NONE
 highlight Storage ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
@@ -133,7 +133,7 @@ highlight SpecialKey ctermfg=2 guifg=#608b4e cterm=none gui=none
 highlight Tag ctermfg=2 guifg=#608b4e cterm=NONE gui=NONE
 highlight Ignore cterm=NONE gui=NONE
 highlight Conceal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
-highlight Error ctermfg=1 guifg=#d16969 cterm=NONE gui=NONE
+highlight Error ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight Todo ctermfg=7 guifg=#d4d4d4 ctermbg=2 guibg=#608b4e cterm=bold,italic gui=bold,italic
 highlight Underlined cterm=underline gui=underline
 highlight qfFileName ctermbg=4 guibg=#569cd6 cterm=NONE gui=NONE
@@ -160,7 +160,9 @@ highlight Repeat ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
 highlight Typedef ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
 highlight Delimiter ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
 highlight Special ctermfg=7 guifg=#d4d4d4 cterm=italic gui=italic
-highlight SpecialChar ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
+highlight SpecialChar ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
+highlight link awkFieldVars Var
+highlight link awkOperator Operator
 highlight cType ctermfg=6 guifg=#4ec9b0 cterm=italic gui=italic
 highlight link cConstant Constant
 highlight link cStatement Conditional
@@ -281,12 +283,6 @@ highlight link goBuiltins Function
 highlight link goFormatSpecifier Constant
 highlight link goEscapeC Escape
 highlight goEscapeU ctermfg=3 guifg=#d7ba7d cterm=italic gui=italic
-highlight link htmlH1 PlainText
-highlight link htmlH2 PlainText
-highlight link htmlH3 PlainText
-highlight link htmlH4 PlainText
-highlight link htmlH5 PlainText
-highlight link htmlH6 PlainText
 highlight htmlHead ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
 highlight htmlTitle ctermfg=7 guifg=#d4d4d4 cterm=NONE gui=NONE
 highlight htmlTag ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
@@ -295,6 +291,12 @@ highlight htmlTagName ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight htmlSpecialTagName ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight htmlBold ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
 highlight htmlItalic ctermfg=6 guifg=#4ec9b0 cterm=italic gui=italic
+highlight link htmlH1 PlainText
+highlight link htmlH2 PlainText
+highlight link htmlH3 PlainText
+highlight link htmlH4 PlainText
+highlight link htmlH5 PlainText
+highlight link htmlH6 PlainText
 highlight link htmlArg Identifier
 highlight link htmlComment Comment
 highlight link htmlSpecialChar Character
@@ -655,10 +657,10 @@ highlight link vimSynContains Conditional
 highlight link vimSynReg Conditional
 highlight link vimSynMtchOpt Conditional
 highlight link vimSynMtchGrp Conditional
-highlight nvimMap ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
-highlight nvimMapBang ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
-highlight nvimUnmap ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
-highlight nvimHLGroup ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
+highlight nvimMap ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
+highlight nvimMapBang ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
+highlight nvimUnmap ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
+highlight nvimHLGroup ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight link yamlPlainScalar String
 highlight link yamlBlockMappingKey Identifier
 highlight link yamlFlowString String
@@ -779,7 +781,7 @@ highlight StartifyHeader ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight StartifySection ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
 highlight TagbarHelp ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
 highlight TagbarHelpKey ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
-highlight TagbarHelpTitle ctermfg=7 guifg=#646695 cterm=NONE gui=NONE
+highlight TagbarHelpTitle ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight TagbarKind ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
 highlight TagbarNestedKind ctermfg=9 guifg=#b5cea8 cterm=NONE gui=NONE
 highlight TagbarScope ctermfg=3 guifg=#dcdcaa cterm=NONE gui=NONE

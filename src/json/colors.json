@@ -20,5 +20,5 @@
   { "name": "BrightBlue",   "gui": "#007acc", "cterm16": "4",  "cterm": "33"  },
   { "name": "Cyan",         "gui": "#4ec9b0", "cterm16": "6",  "cterm": "43"  },
   { "name": "Magenta",      "gui": "#c586c0", "cterm16": "13", "cterm": "176" },
-  { "name": "Violet",       "gui": "#646695", "cterm16": "7",  "cterm": "60"  }
+  { "name": "Violet",       "gui": "#646695", "cterm16": "13",  "cterm": "60"  }
 ]

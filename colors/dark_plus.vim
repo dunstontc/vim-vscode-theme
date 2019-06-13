@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-06-12
+" Last Modified: 2019-06-13
 " ==============================================================================
 
 " Setup: {{{
@@ -136,8 +136,8 @@ highlight Conceal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui
 highlight Error ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight Todo ctermfg=7 guifg=#d4d4d4 ctermbg=2 guibg=#608b4e cterm=bold,italic gui=bold,italic
 highlight Underlined cterm=underline gui=underline
-highlight qfFileName ctermbg=4 guibg=#569cd6 cterm=NONE gui=NONE
-highlight qfLineNr ctermbg=9 guibg=#b5cea8 cterm=NONE gui=NONE
+highlight qfFileName ctermfg=4 guifg=#569cd6 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight qfLineNr ctermfg=9 guifg=#b5cea8 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight Statement ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight Constant ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight PreProc ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE

@@ -105,8 +105,8 @@
   {"group": "Error",          "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "Todo",           "style": {"fg": "White",      "bg": "Green",        "styling": "bold,italic"}},
   {"group": "Underlined",     "style": {                                          "styling": "underline", }},
-  {"group": "qfFileName",     "style": {                    "bg": "Blue"      }},
-  {"group": "qfLineNr",       "style": {                    "bg": "LightGreen"}},
+  {"group": "qfFileName",     "style": {"fg": "Blue",       "bg": "nop"       }},
+  {"group": "qfLineNr",       "style": {"fg": "LightGreen", "bg": "nop"       }},
 
   // ===========================================================================
   // Default Syntax Groups

@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-06-13
+" Last Modified: 2019-06-14
 " ==============================================================================
 
 " Setup: {{{
@@ -87,22 +87,22 @@ highlight vCursor ctermbg=13 guibg=#c586c0 cterm=NONE gui=NONE
 highlight rCursor ctermbg=1 guibg=#d16969 cterm=NONE gui=NONE
 highlight Cursor ctermbg=2 guibg=#608b4e cterm=NONE gui=NONE
 highlight TermCursor ctermbg=2 guibg=#608b4e cterm=NONE gui=NONE
-highlight CursorLine ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight CursorLine ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight Directory ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight DiffAdd ctermbg=2 guibg=#608b4e cterm=NONE gui=NONE
 highlight diffAdded ctermbg=2 guibg=#608b4e cterm=NONE gui=NONE
 highlight DiffChange ctermbg=3 guibg=#dcdcaa cterm=NONE gui=NONE
 highlight DiffDelete ctermbg=1 guibg=#d16969 cterm=NONE gui=NONE
 highlight DiffText ctermbg=7 guibg=#d4d4d4 cterm=NONE gui=NONE
-highlight EndOfBuffer ctermfg=0 guifg=#1e1e1e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight EndOfBuffer ctermfg=0 guifg=#505050 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight ErrorMsg ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight VertSplit ctermfg=0 guifg=#1e1e1e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
 highlight Folded ctermfg=0 guifg=#505050 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight FoldColumn ctermfg=0 guifg=#1e1e1e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight SignColumn ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight SignColumn ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight IncSearch ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
-highlight LineNr ctermfg=0 guifg=#505050 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight CursorLineNr ctermfg=2 guifg=#608b4e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight LineNr ctermfg=0 guifg=#505050 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight CursorLineNr ctermfg=2 guifg=#608b4e ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight matchTag ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
 highlight MatchParen ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
 highlight ModeMsg ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
@@ -749,10 +749,10 @@ highlight deniteConcealedMark ctermfg=4 guifg=#264f78 cterm=NONE gui=NONE
 highlight deniteModeNormal ctermfg=2 guifg=#608b4e cterm=NONE gui=NONE
 highlight deniteModeInsert ctermfg=2 guifg=#608b4e cterm=NONE gui=NONE
 highlight deniteSource_Projectile_Name ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
-highlight GitGutterAdd ctermfg=2 guifg=#608b4e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight GitGutterChange ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight GitGutterDelete ctermfg=1 guifg=#d16969 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight GitGutterChangeDelete ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight GitGutterAdd ctermfg=2 guifg=#608b4e ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight GitGutterChange ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight GitGutterDelete ctermfg=1 guifg=#d16969 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight GitGutterChangeDelete ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight GitGutterAddLine cterm=NONE gui=NONE
 highlight GitGutterChangeLine cterm=NONE gui=NONE
 highlight GitGutterDeleteLine cterm=NONE gui=NONE

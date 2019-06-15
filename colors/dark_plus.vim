@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-06-14
+" Last Modified: 2019-06-15
 " ==============================================================================
 
 " Setup: {{{
@@ -117,6 +117,7 @@ highlight Search ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=
 highlight Substitute ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
 highlight SpellBad ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellCap ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight SpellRare ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellLocal ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight StatusLine ctermfg=7 guifg=#d4d4d4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight StatusLineNC ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE cterm=NONE gui=NONE

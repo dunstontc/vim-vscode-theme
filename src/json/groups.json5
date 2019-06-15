@@ -86,6 +86,7 @@
   {"group": "Substitute",     "style": {"fg": "nop",        "bg": "DarkBlue"  }},
   {"group": "SpellBad",       "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "SpellCap",       "style": {"fg": "LightRed",   "bg": "nop"       }},
+  {"group": "SpellRare",      "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "SpellLocal",     "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "StatusLine",     "style": {"fg": "White",      "bg": "nop"       }},
   {"group": "StatusLineNC",   "style": {"fg": "nop",        "bg": "nop"       }},

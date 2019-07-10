@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-06-15
+" Last Modified: 2019-07-09
 " ==============================================================================
 
 " Setup: {{{
@@ -163,14 +163,22 @@ highlight Delimiter ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
 highlight Special ctermfg=7 guifg=#d4d4d4 cterm=italic gui=italic
 highlight SpecialChar ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight link awkFieldVars Var
+highlight link awkVariables Var
+highlight link awkStatement Constant
+highlight link awkPatterns Constant
+highlight link awkSpecialPrintf Constant
 highlight link awkOperator Operator
+highlight link awkExpression Operator
+highlight link awkBoolLogic Operator
+highlight link awkSemicolon Operator
+highlight link awkSpecialCharacter Character
 highlight cType ctermfg=6 guifg=#4ec9b0 cterm=italic gui=italic
 highlight link cConstant Constant
-highlight link cStatement Conditional
+highlight link cFormat Constant
 highlight link cInclude Constant
+highlight link cStatement Conditional
 highlight link cIncluded Identifier
 highlight link cSpecial Character
-highlight link cFormat Identifier
 highlight link cSpecialCharacter Escape
 highlight csType ctermfg=6 guifg=#4ec9b0 cterm=italic gui=italic
 highlight link csThis Language
@@ -447,6 +455,9 @@ highlight mkdListItemLine cterm=NONE gui=NONE
 highlight mkdNonListItemBlock cterm=NONE gui=NONE
 highlight mkdRule ctermfg=13 guifg=#c586c0 cterm=NONE gui=NONE
 highlight mkdDelimiter ctermfg=0 guifg=#505050 cterm=NONE gui=NONE
+highlight link nroffReqLeader Constant
+highlight link nroffReqName Constant
+highlight link nroffSpecialChar Character
 highlight link perlSpecialString Escape
 highlight link perlVarMember Type
 highlight link powershellOperatorStart Conditional
@@ -531,7 +542,6 @@ highlight link shRedir Control
 highlight link shOperator Control
 highlight link shTestOpr Control
 highlight link shVarAssign Control
-highlight link shCommandSub Type
 highlight link shCmdSubRegion Statement
 highlight link shStatement Keyword
 highlight link shDerefVar Identifier
@@ -662,6 +672,8 @@ highlight nvimMap ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight nvimMapBang ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight nvimUnmap ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
 highlight nvimHLGroup ctermfg=13 guifg=#646695 cterm=NONE gui=NONE
+highlight link yaccVar Var
+highlight link yaccSectionSep Conditional
 highlight link yamlPlainScalar String
 highlight link yamlBlockMappingKey Identifier
 highlight link yamlFlowString String
@@ -724,11 +736,11 @@ highlight ALEError cterm=NONE gui=NONE
 highlight ALEWarning cterm=NONE gui=NONE
 highlight ALEStyleError cterm=NONE gui=NONE
 highlight ALEStyleWarning cterm=NONE gui=NONE
-highlight ALEInfoSign ctermfg=9 guifg=#b5cea8 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight ALEErrorSign ctermfg=1 guifg=#d16969 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight ALEWarningSign ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight ALEStyleErrorSign ctermfg=3 guifg=#dcdcaa ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight ALEStyleWarningSign ctermfg=3 guifg=#dcdcaa ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
+highlight ALEInfoSign ctermfg=9 guifg=#b5cea8 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight ALEErrorSign ctermfg=1 guifg=#d16969 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight ALEWarningSign ctermfg=3 guifg=#d7ba7d ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight ALEStyleErrorSign ctermfg=3 guifg=#dcdcaa ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
+highlight ALEStyleWarningSign ctermfg=3 guifg=#dcdcaa ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight ALEInfoLine cterm=NONE gui=NONE
 highlight ALEErrorLine cterm=NONE gui=NONE
 highlight ALEWarningLine cterm=NONE gui=NONE

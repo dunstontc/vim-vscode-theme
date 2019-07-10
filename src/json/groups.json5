@@ -63,6 +63,7 @@
   {"group": "DiffChange",     "style": {                    "bg": "Yellow"    }},
   {"group": "DiffDelete",     "style": {                    "bg": "LightRed"  }},
   {"group": "DiffText",       "style": {                    "bg": "White"     }},
+  /* {"group": "EndOfBuffer",    "style": {"fg": "Black",      "bg": "DarkGray"  }}, */
   {"group": "EndOfBuffer",    "style": {"fg": "Gray",       "bg": "Black"     }},
   {"group": "ErrorMsg",       "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "VertSplit",      "style": {"fg": "Black",      "bg": "DarkGray"  }},
@@ -151,18 +152,26 @@
 // ==============================================================================
 
 // AWK: {{{
-  {"group": "awkFieldVars", "link":  "Var"},
-  {"group": "awkOperator",  "link":  "Operator"},
+  {"group": "awkFieldVars",        "link":  "Var"},
+  {"group": "awkVariables",        "link":  "Var"},
+  {"group": "awkStatement",        "link":  "Constant"},
+  {"group": "awkPatterns",         "link":  "Constant"},
+  {"group": "awkSpecialPrintf",    "link":  "Constant"},
+  {"group": "awkOperator",         "link":  "Operator"},
+  {"group": "awkExpression",       "link":  "Operator"},
+  {"group": "awkBoolLogic",        "link":  "Operator"},
+  {"group": "awkSemicolon",        "link":  "Operator"},
+  {"group": "awkSpecialCharacter", "link":  "Character"},
 // }}}
 
 // C: {{{
   {"group": "cType",             "style": {"fg": "Cyan", "styling": "italic"}},
   {"group": "cConstant",         "link":  "Constant"},
-  {"group": "cStatement",        "link":  "Conditional"},
+  {"group": "cFormat",           "link":  "Constant"},
   {"group": "cInclude",          "link":  "Constant"},
+  {"group": "cStatement",        "link":  "Conditional"},
   {"group": "cIncluded",         "link":  "Identifier"},
   {"group": "cSpecial",          "link":  "Character"},
-  {"group": "cFormat",           "link":  "Identifier"},
   {"group": "cSpecialCharacter", "link":  "Escape"},
   // }}}
 
@@ -529,6 +538,12 @@
   {"group": "mkdDelimiter",        "style": {"fg": "Gray"}},
   // }}}
 
+  // *roff: {{{
+  {"group": "nroffReqLeader",   "link": "Constant"},
+  {"group": "nroffReqName",     "link": "Constant"},
+  {"group": "nroffSpecialChar", "link": "Character"},
+  //}}}
+
   // Perl: {{{
   {"group": "perlSpecialString", "link": "Escape"},
   {"group": "perlVarMember", "link": "Type"},
@@ -635,7 +650,7 @@
   {"group": "shOperator",          "link": "Control"},
   {"group": "shTestOpr",           "link": "Control"},
   {"group": "shVarAssign",         "link": "Control"},
-  {"group": "shCommandSub",        "link": "Type"},
+  /* {"group": "shCommandSub",        "link": "Type"}, */
   {"group": "shCmdSubRegion",      "link": "Statement"},
   {"group": "shStatement",         "link": "Keyword"},
   {"group": "shDerefVar",          "link": "Identifier"},
@@ -801,6 +816,11 @@
   // {"group": "quickfixline",    "style": {"fg": "Violet", "bg": "Violet"}},
   // }}}
 
+  // yacc: {{{
+  {"group": "yaccVar",         "link": "Var"},
+  {"group": "yaccSectionSep",  "link": "Conditional"},
+  // }}}
+
   // YAML: {{{
   {"group": "yamlPlainScalar",         "link": "String"},
   {"group": "yamlBlockMappingKey",     "link": "Identifier"},
@@ -908,11 +928,11 @@
   {"group": "ALEWarning",          "style": {}},
   {"group": "ALEStyleError",       "style": {}},
   {"group": "ALEStyleWarning",     "style": {}},
-  {"group": "ALEInfoSign",         "style": {"fg": "LightGreen",   "bg": "DarkGray"}},
-  {"group": "ALEErrorSign",        "style": {"fg": "LightRed",     "bg": "DarkGray"}},
-  {"group": "ALEWarningSign",      "style": {"fg": "YellowOrange", "bg": "DarkGray"}},
-  {"group": "ALEStyleErrorSign",   "style": {"fg": "Yellow",       "bg": "DarkGray"}},
-  {"group": "ALEStyleWarningSign", "style": {"fg": "Yellow",       "bg": "DarkGray"}},
+  {"group": "ALEInfoSign",         "style": {"fg": "LightGreen",   "bg": "Black"}},
+  {"group": "ALEErrorSign",        "style": {"fg": "LightRed",     "bg": "Black"}},
+  {"group": "ALEWarningSign",      "style": {"fg": "YellowOrange", "bg": "Black"}},
+  {"group": "ALEStyleErrorSign",   "style": {"fg": "Yellow",       "bg": "Black"}},
+  {"group": "ALEStyleWarningSign", "style": {"fg": "Yellow",       "bg": "Black"}},
   {"group": "ALEInfoLine",         "style": {}},
   {"group": "ALEErrorLine",        "style": {}},
   {"group": "ALEWarningLine",      "style": {}},

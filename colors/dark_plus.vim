@@ -2,7 +2,7 @@
 " FILE: Dark Plus Vim
 " Author: Clay Dunston <dunstontc@gmail.com>
 " License: MIT License
-" Last Modified: 2019-07-09
+" Last Modified: 2019-07-12
 " ==============================================================================
 
 " Setup: {{{
@@ -113,19 +113,19 @@ highlight PmenuSel ctermfg=7 guifg=#d4d4d4 ctermbg=4 guibg=#264f78 cterm=NONE gu
 highlight PmenuSbar ctermbg=7 guibg=#808080 cterm=NONE gui=NONE
 highlight PmenuThumb ctermbg=4 guibg=#007acc cterm=NONE gui=NONE
 highlight Question ctermfg=6 guifg=#4ec9b0 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-highlight Search ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
+highlight Search ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=reverse gui=reverse
 highlight Substitute ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
 highlight SpellBad ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellCap ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellRare ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellLocal ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-highlight StatusLine ctermfg=7 guifg=#d4d4d4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight StatusLine ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
 highlight StatusLineNC ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight TabLine ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#303030 cterm=italic gui=italic
 highlight TabLineFill ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=italic gui=italic
 highlight TabLineSel ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight Title ctermfg=13 guifg=#c586c0 cterm=bold gui=bold
-highlight Visual ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
+highlight Visual ctermbg=0 guibg=#1e1e1e cterm=reverse gui=reverse
 highlight VisualNOS ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
 highlight WarningMsg ctermfg=3 guifg=#ce9178 cterm=NONE gui=NONE
 highlight WildMenu ctermfg=7 guifg=#d4d4d4 ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
@@ -139,6 +139,10 @@ highlight Todo ctermfg=7 guifg=#d4d4d4 ctermbg=2 guibg=#608b4e cterm=bold,italic
 highlight Underlined cterm=underline gui=underline
 highlight qfFileName ctermfg=4 guifg=#569cd6 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight qfLineNr ctermfg=9 guifg=#b5cea8 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+highlight helpHyperTextEntry ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
+highlight helpHyperTextJump ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
+highlight helpCommand ctermfg=3 guifg=#ce9178 cterm=italic gui=italic
+highlight helpExample ctermfg=3 guifg=#ce9178 cterm=italic gui=italic
 highlight Statement ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight Constant ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight PreProc ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
@@ -474,10 +478,10 @@ highlight pythonCoding ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight pythonBuiltinFunc ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
 highlight pythonClassVar ctermfg=4 guifg=#569cd6 cterm=italic gui=italic
 highlight pythonAttribute ctermfg=4 guifg=#569cd6 cterm=NONE gui=NONE
+highlight link pythonBuiltin Constant
 highlight link pythonDot Identifier
 highlight link pythonFunction Function
 highlight link pythonClassName Type
-highlight link pythonBuiltin Type
 highlight link pythonBuiltinObj Type
 highlight link pythonInclude Control
 highlight link pythonOperator Control

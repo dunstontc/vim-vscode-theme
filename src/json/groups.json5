@@ -44,6 +44,10 @@
   {"group": "Var",            "style": {"fg": "LightBlue"}},
   {"group": "Tags",           "style": {"fg": "LightGray"}},
 
+  {"group": "User1",          "style": {"fg": "Black", "bg": "Green"    }},
+  {"group": "User2",          "style": {"fg": "White", "bg": "Gray"     }},
+  {"group": "User3",          "style": {"fg": "Green", "bg": "DarkGray" }},
+
   // ===========================================================================
   // UI Color
   // ===========================================================================
@@ -82,14 +86,14 @@
   {"group": "PmenuSbar",          "style": {                    "bg": "LightGray" }},
   {"group": "PmenuThumb",         "style": {                    "bg": "BrightBlue"}},
   {"group": "Question",           "style": {"fg": "Cyan",       "bg": "nop"       }},
-  {"group": "Search",             "style": {"fg": "nop",        "bg": "DarkBlue", "styling": "reverse" }},
-  {"group": "Substitute",         "style": {"fg": "nop",        "bg": "DarkBlue"  }},
+  {"group": "Search",             "style": {"fg": "Black",      "bg": "White",    }},
+  {"group": "Substitute",         "style": {"fg": "nop",        "bg": "White"     }},
   {"group": "SpellBad",           "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "SpellCap",           "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "SpellRare",          "style": {"fg": "LightRed",   "bg": "nop"       }},
   {"group": "SpellLocal",         "style": {"fg": "LightRed",   "bg": "nop"       }},
-  {"group": "StatusLine",         "style": {"fg": "White",      "bg": "DarkGray"       }},
-  {"group": "StatusLineNC",       "style": {"fg": "nop",        "bg": "nop"       }},
+  /* {"group": "StatusLine",         "style": {"fg": "White",      "bg": "DarkGray"  }}, */
+  /* {"group": "StatusLineNC",       "style": {"fg": "nop",        "bg": "nop"       }}, */
   {"group": "TabLine",            "style": {"fg": "White",      "bg": "DarkGray",     "styling": "italic"}},
   {"group": "TabLineFill",        "style": {"fg": "White",      "bg": "Black",        "styling": "italic"}},
   {"group": "TabLineSel",         "style": {"fg": "White",      "bg": "Black"     }},

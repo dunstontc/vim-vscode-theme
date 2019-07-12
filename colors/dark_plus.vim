@@ -79,6 +79,9 @@ highlight Language ctermfg=4 guifg=#569cd6 cterm=italic gui=italic
 highlight Type ctermfg=6 guifg=#4ec9b0 cterm=NONE gui=NONE
 highlight Var ctermfg=6 guifg=#9cdcfe cterm=NONE gui=NONE
 highlight Tags ctermfg=7 guifg=#808080 cterm=NONE gui=NONE
+highlight User1 ctermfg=0 guifg=#1e1e1e ctermbg=2 guibg=#608b4e cterm=NONE gui=NONE
+highlight User2 ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#505050 cterm=NONE gui=NONE
+highlight User3 ctermfg=2 guifg=#608b4e ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
 highlight Normal ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight NormalNC ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
 highlight ColorColumn ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
@@ -113,14 +116,12 @@ highlight PmenuSel ctermfg=7 guifg=#d4d4d4 ctermbg=4 guibg=#264f78 cterm=NONE gu
 highlight PmenuSbar ctermbg=7 guibg=#808080 cterm=NONE gui=NONE
 highlight PmenuThumb ctermbg=4 guibg=#007acc cterm=NONE gui=NONE
 highlight Question ctermfg=6 guifg=#4ec9b0 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-highlight Search ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=reverse gui=reverse
-highlight Substitute ctermfg=NONE guifg=NONE ctermbg=4 guibg=#264f78 cterm=NONE gui=NONE
+highlight Search ctermfg=0 guifg=#1e1e1e ctermbg=7 guibg=#d4d4d4 cterm=NONE gui=NONE
+highlight Substitute ctermfg=NONE guifg=NONE ctermbg=7 guibg=#d4d4d4 cterm=NONE gui=NONE
 highlight SpellBad ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellCap ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellRare ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight SpellLocal ctermfg=1 guifg=#d16969 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-highlight StatusLine ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#303030 cterm=NONE gui=NONE
-highlight StatusLineNC ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
 highlight TabLine ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#303030 cterm=italic gui=italic
 highlight TabLineFill ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=italic gui=italic
 highlight TabLineSel ctermfg=7 guifg=#d4d4d4 ctermbg=0 guibg=#1e1e1e cterm=NONE gui=NONE
